@@ -1,0 +1,40 @@
+<ion-content>
+  <div class="container">
+    <!-- Back pill -->
+    <button class="back-pill" (click)="goBack()">
+      <ion-icon name="arrow-back"></ion-icon>
+    </button>
+
+    <!-- Logo + number input -->
+    <div class="top-section">
+      <div class="logo-circle small"><span>S</span></div>
+
+      <div
+        class="phone-pill"
+        [class.shake]="!isValid && mobileNumber.length > 0"
+      >
+        <span class="prefix">+63</span>
+        <input
+          type="tel"
+          inputmode="numeric"
+          maxlength="10"
+          placeholder="912 345 6789"
+          [(ngModel)]="mobileNumber"
+        />
+      </div>
+
+      <p class="hint">Enter your mobile number to login</p>
+    </div>
+
+    <!-- MPIN Login box (parang GCash) -->
+    <button class="mpin-box" [disabled]="!isValid" (click)="goToMpin()">
+      <div class="mpin-grid">
+        <span></span><span></span><span></span> <span></span><span></span
+        ><span></span> <span></span><span></span><span></span>
+      </div>
+      <p>MPIN Login</p>
+    </button>
+
+    <p class="version">Swapp for a better tomorrow</p>
+  </div>
+</ion-content>

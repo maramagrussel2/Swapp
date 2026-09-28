@@ -1,0 +1,42 @@
+<ion-content>
+  <div class="container">
+    <!-- Back pill -->
+    <button class="back-pill" (click)="goBack()">
+      <ion-icon name="arrow-back"></ion-icon>
+    </button>
+
+    <div class="top-section">
+      <div class="logo-circle small"><span>S</span></div>
+      <h2>Enter your MPIN</h2>
+      <p class="mobile">{{ mobile }}</p>
+
+      <!-- Dots indicator -->
+      <div class="dots">
+        <span
+          *ngFor="let d of dots; let i = index"
+          class="dot"
+          [class.filled]="i < mpin.length"
+        ></span>
+      </div>
+    </div>
+
+    <!-- Keypad -->
+    <div class="keypad">
+      <button
+        *ngFor="let key of keys"
+        class="key"
+        [class.hidden]="!key"
+        (click)="press(key)"
+      >
+        <span *ngIf="key !== 'back'">{{ key }}</span>
+        <ion-icon *ngIf="key === 'back'" name="backspace-outline"></ion-icon>
+      </button>
+    </div>
+
+    <!-- Bottom links (parang GCash) -->
+    <div class="bottom-links">
+      <a>Help Center</a>
+      <a>Forgot MPIN?</a>
+    </div>
+  </div>
+</ion-content>

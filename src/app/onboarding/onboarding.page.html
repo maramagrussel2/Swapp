@@ -1,0 +1,43 @@
+<ion-content>
+  <div class="container">
+    <!-- Logo -->
+    <div class="logo-circle">
+      <span>S</span>
+    </div>
+
+    <!-- Carousel -->
+    <div class="carousel" (click)="nextSlide()">
+      <div class="track" [style.transform]="translateX">
+        <div class="slide" *ngFor="let s of slides">
+          <h1>{{ s.title }}</h1>
+          <p>{{ s.text }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dots -->
+    <div class="dots">
+      <span
+        *ngFor="let s of slides; let i = index"
+        class="dot"
+        [class.active]="i === current"
+        (click)="current = i; $event.stopPropagation()"
+      ></span>
+    </div>
+
+    <!-- Buttons -->
+    <div class="buttons">
+      <ion-button expand="block" class="btn-primary" routerLink="/login1">
+        Get Started
+      </ion-button>
+      <ion-button
+        expand="block"
+        fill="outline"
+        class="btn-secondary"
+        routerLink="/login1"
+      >
+        I already have an account
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
