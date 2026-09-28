@@ -1,0 +1,57 @@
+<ion-content>
+  <div class="phone-frame">
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <button class="back-btn" (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </button>
+    </div>
+
+    <!-- Scrollable Content -->
+    <div class="scrollable-content">
+      <!-- Section Title -->
+      <div class="page-header">
+        <h2>Edit Personal Information</h2>
+        <p>Make changes to your details</p>
+      </div>
+
+      <!-- Avatar Section -->
+      <div class="avatar-container">
+        <div class="custom-avatar">
+          <img src="assets/profile.jpg" alt="Profile Picture" class="profile-img" />
+        </div>
+        <div class="edit-badge">
+          <ion-icon name="pencil"></ion-icon>
+        </div>
+      </div>
+
+      <!-- Editable Form Inputs -->
+      <div class="form-container">
+        <div class="input-group">
+          <label>Full Name</label>
+          <input type="text" placeholder="Juan Dela Cruz" />
+        </div>
+
+        <div class="input-group">
+          <label>Email</label>
+          <input type="email" placeholder="juan.delacruz@email.com" />
+        </div>
+
+        <div class="input-group">
+          <label>Phone</label>
+          <input type="text" placeholder="+63 912 345 6789" />
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="button-group">
+        <button type="button" class="save-btn" (click)="goBack()">
+          Save Changes
+        </button>
+        <button type="button" class="cancel-btn" (click)="goBack()">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</ion-content>

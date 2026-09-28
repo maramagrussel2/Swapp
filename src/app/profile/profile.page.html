@@ -1,0 +1,99 @@
+<ion-content>
+  <div class="phone-frame">
+    <!-- Profile Header Section -->
+    <div class="profile-header">
+      <div class="avatar-container" (click)="triggerFileInput()">
+        <img *ngIf="profileImage" [src]="profileImage" alt="Profile Picture" class="avatar-img" />
+        <ion-icon *ngIf="!profileImage" name="person" class="avatar-placeholder"></ion-icon>
+        <div class="edit-badge">
+          <ion-icon name="camera"></ion-icon>
+        </div>
+      </div>
+      <input #fileInput type="file" accept="image/*" style="display: none" (change)="onFileSelected($event)" />
+
+      <h3 class="user-name">Juan Dela Cruz</h3>
+      <p class="user-phone">0918 987 6543</p>
+      <div class="status-badge">
+        <ion-icon name="checkmark-circle"></ion-icon>
+        <span>Verified</span>
+      </div>
+    </div>
+
+    <!-- Navigation Menu Items -->
+    <div class="menu-list">
+      <div class="menu-item" (click)="goToPersonalInfo()">
+        <div class="item-left">
+          <ion-icon name="person-outline" class="item-icon"></ion-icon>
+          <span class="item-text">Personal Information</span>
+        </div>
+        <ion-icon name="chevron-forward-outline" class="chevron-icon"></ion-icon>
+      </div>
+
+      <div class="menu-item" (click)="goToSecurity()">
+        <div class="item-left">
+          <ion-icon name="shield-checkmark-outline" class="item-icon"></ion-icon>
+          <span class="item-text">Security</span>
+        </div>
+        <ion-icon name="chevron-forward-outline" class="chevron-icon"></ion-icon>
+      </div>
+
+      <div class="menu-item" (click)="goToNotifications()">
+        <div class="item-left">
+          <ion-icon name="notifications-outline" class="item-icon"></ion-icon>
+          <span class="item-text">Notification Settings</span>
+        </div>
+        <ion-icon name="chevron-forward-outline" class="chevron-icon"></ion-icon>
+      </div>
+
+      <!-- Help Center Menu Item -->
+      <div class="menu-item" (click)="goToHelpCenter()">
+        <div class="item-left">
+          <ion-icon name="help-circle-outline" class="item-icon"></ion-icon>
+          <span class="item-text">Help Center</span>
+        </div>
+        <ion-icon name="chevron-forward-outline" class="chevron-icon"></ion-icon>
+      </div>
+
+      <!-- About Splash Menu Item (Connected) -->
+      <div class="menu-item" (click)="goToAboutSplash()">
+        <div class="item-left">
+          <ion-icon name="information-circle-outline" class="item-icon"></ion-icon>
+          <span class="item-text">About Splash</span>
+        </div>
+        <ion-icon name="chevron-forward-outline" class="chevron-icon"></ion-icon>
+      </div>
+    </div>
+
+    <!-- Action Logout Button -->
+    <div class="action-container">
+      <ion-button expand="block" fill="outline" class="logout-btn" (click)="logout()">
+        LOGOUT
+      </ion-button>
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <div class="bottom-nav">
+      <div class="nav-tab">
+        <ion-icon name="home-outline"></ion-icon>
+        <span>Home</span>
+      </div>
+      <div class="nav-tab">
+        <ion-icon name="chatbubble-outline"></ion-icon>
+        <span>Inbox</span>
+      </div>
+      <div class="nav-tab center-qr">
+        <div class="qr-circle">
+          <ion-icon name="qr-code-outline"></ion-icon>
+        </div>
+      </div>
+      <div class="nav-tab">
+        <ion-icon name="swap-horizontal-outline"></ion-icon>
+        <span>Convert</span>
+      </div>
+      <div class="nav-tab active">
+        <ion-icon name="person-outline"></ion-icon>
+        <span>Profile</span>
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,33 @@
+<ion-content>
+  <div class="phone-frame">
+    <!-- Header -->
+    <div class="page-header">
+      <button type="button" class="back-button" (click)="goBack()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </button>
+      <div class="header-text-group">
+        <h2 class="page-title">Help Center</h2>
+        <span class="page-subtitle">How can we help you?</span>
+      </div>
+    </div>
+
+    <!-- Main List Content -->
+    <div class="content-body">
+      <div class="section-container">
+        <div class="menu-cards-list">
+          <div 
+            *ngFor="let option of helpOptions" 
+            class="menu-card"
+            (click)="navigateToOption(option.route)"
+          >
+            <div class="card-left">
+              <ion-icon [name]="option.icon" class="card-icon"></ion-icon>
+              <span class="card-title">{{ option.title }}</span>
+            </div>
+            <ion-icon name="chevron-forward-outline" class="chevron-icon"></ion-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

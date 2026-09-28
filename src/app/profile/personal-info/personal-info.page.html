@@ -1,0 +1,113 @@
+<ion-content>
+  <div class="phone-frame">
+    <!-- Standardized Page Header -->
+    <div class="page-header">
+      <button type="button" class="back-button" (click)="goBack()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </button>
+      <div class="header-text-group">
+        <h2 class="page-title">Personal Information</h2>
+        <span class="page-subtitle">Update your personal details</span>
+      </div>
+    </div>
+
+    <!-- Scrollable Content Area -->
+    <div class="content-body">
+      <!-- Avatar Section -->
+      <div class="avatar-section">
+        <div class="avatar-wrapper" (click)="triggerFileInput()">
+          <img *ngIf="profileImage" [src]="profileImage" alt="Profile Picture" class="profile-img" />
+          <ion-icon *ngIf="!profileImage" name="person" class="avatar-placeholder"></ion-icon>
+          <div class="edit-badge">
+            <ion-icon name="camera"></ion-icon>
+          </div>
+        </div>
+        <input #fileInput type="file" accept="image/*" style="display: none" (change)="onFileSelected($event)" />
+      </div>
+
+      <!-- Form Inputs Container -->
+      <div class="section-container">
+        <span class="section-label">ACCOUNT DETAILS</span>
+
+        <div class="info-cards-list">
+          <!-- Full Name -->
+          <div class="info-card" [class.editable]="isEditing">
+            <div class="card-left">
+              <ion-icon name="person-outline" class="card-icon"></ion-icon>
+              <div class="card-text">
+                <span class="field-label">Full Name</span>
+                <input
+                  type="text"
+                  [(ngModel)]="fullName"
+                  [readonly]="!isEditing"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="info-card" [class.editable]="isEditing">
+            <div class="card-left">
+              <ion-icon name="mail-outline" class="card-icon"></ion-icon>
+              <div class="card-text">
+                <span class="field-label">Email</span>
+                <input
+                  type="email"
+                  [(ngModel)]="email"
+                  [readonly]="!isEditing"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Phone -->
+          <div class="info-card" [class.editable]="isEditing">
+            <div class="card-left">
+              <ion-icon name="call-outline" class="card-icon"></ion-icon>
+              <div class="card-text">
+                <span class="field-label">Phone</span>
+                <input
+                  type="text"
+                  [(ngModel)]="phone"
+                  [readonly]="!isEditing"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Action Button Container -->
+    <div class="action-container">
+      <ion-button expand="block" class="action-btn" (click)="toggleEdit()">
+        {{ isEditing ? 'SAVE INFORMATION' : 'EDIT INFORMATION' }}
+      </ion-button>
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <div class="bottom-nav">
+      <div class="nav-tab">
+        <ion-icon name="home-outline"></ion-icon>
+        <span>Home</span>
+      </div>
+      <div class="nav-tab">
+        <ion-icon name="chatbubble-outline"></ion-icon>
+        <span>Inbox</span>
+      </div>
+      <div class="nav-tab center-qr">
+        <div class="qr-circle">
+          <ion-icon name="qr-code-outline"></ion-icon>
+        </div>
+      </div>
+      <div class="nav-tab">
+        <ion-icon name="swap-horizontal-outline"></ion-icon>
+        <span>Convert</span>
+      </div>
+      <div class="nav-tab active">
+        <ion-icon name="person-outline"></ion-icon>
+        <span>Profile</span>
+      </div>
+    </div>
+  </div>
+</ion-content>

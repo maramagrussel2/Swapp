@@ -1,0 +1,59 @@
+<ion-content>
+  <div class="phone-frame">
+    <!-- Top Bar Header -->
+    <div class="top-bar">
+      <button type="button" class="back-btn" (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </button>
+    </div>
+
+    <!-- Scrollable Content Container -->
+    <div class="scrollable-content">
+      <!-- Page Title -->
+      <div class="page-header">
+        <h2>Security</h2>
+        <p>Manage your security settings</p>
+      </div>
+
+      <!-- Settings Menu Options -->
+      <div class="settings-list">
+        <!-- Change Password -->
+        <div class="setting-item" (click)="goToChangePassword()">
+          <div class="item-left">
+            <ion-icon name="lock-closed-outline" class="item-icon"></ion-icon>
+            <span class="item-label">Change Password</span>
+          </div>
+          <ion-icon name="chevron-forward-outline" class="chevron-icon"></ion-icon>
+        </div>
+
+        <!-- Two-Factor Authentication -->
+        <div class="setting-item" (click)="goToTwoFactor()">
+          <div class="item-left">
+            <ion-icon name="shield-checkmark-outline" class="item-icon"></ion-icon>
+            <span class="item-label">Two-Factor Authentication</span>
+          </div>
+          <div class="item-right">
+            <span class="status-badge">Off</span>
+            <ion-icon name="chevron-forward-outline" class="chevron-icon"></ion-icon>
+          </div>
+        </div>
+
+        <!-- Login Sessions -->
+        <div class="setting-item" (click)="goToLoginSessions()">
+          <div class="item-left">
+            <ion-icon name="time-outline" class="item-icon"></ion-icon>
+            <span class="item-label">Login Sessions</span>
+          </div>
+          <ion-icon name="chevron-forward-outline" class="chevron-icon"></ion-icon>
+        </div>
+      </div>
+
+      <!-- Log Out All Devices Button -->
+      <div class="action-container">
+        <ion-button expand="block" fill="outline" class="logout-btn" (click)="logOutAllDevices()">
+          Log Out All Devices
+        </ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>

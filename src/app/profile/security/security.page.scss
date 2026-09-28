@@ -1,0 +1,213 @@
+/* Global Host Setup */
+ion-content {
+  --background: #000000;
+  --padding-top: 0;
+  --padding-bottom: 0;
+  --padding-start: 0;
+  --padding-end: 0;
+}
+
+/* Outer Mobile Frame */
+.phone-frame {
+  width: 100%;
+  max-width: 390px;
+  height: 844px;
+  margin: 20px auto;
+
+  background: #0a0b0d;
+  color: #ffffff;
+
+  border: 1px solid #1a1d21;
+  border-radius: 40px;
+
+  overflow: hidden;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+}
+
+/* Header Back Button Container */
+.top-bar {
+  display: flex;
+  align-items: center;
+  padding: 30px 20px 10px;
+
+  .back-btn {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease, transform 0.15s ease;
+
+    &:hover {
+      color: #ff6500;
+      transform: translateX(-2px);
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+}
+
+/* Scrollable Inner Body */
+.scrollable-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 24px 30px;
+  display: flex;
+  flex-direction: column;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Page Titles */
+.page-header {
+  text-align: center;
+  margin-bottom: 32px;
+
+  h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+  }
+
+  p {
+    margin: 4px 0 0;
+    font-size: 12px;
+    color: #7d848f;
+  }
+}
+
+/* Settings List Options */
+.settings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+
+  .setting-item {
+    background: #121418;
+    border: 1px solid #1e2228;
+    border-radius: 14px;
+    padding: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    /* Hover State (matching main profile menu) */
+    &:hover {
+      background: #1a1e24;
+      border-color: #ff6500;
+      transform: translateY(-1px);
+
+      .item-left {
+        .item-icon,
+        .item-label {
+          color: #ffffff;
+        }
+      }
+
+      .chevron-icon {
+        color: #ff6500;
+        transform: translateX(2px);
+      }
+    }
+
+    /* Active Press State */
+    &:active {
+      transform: translateY(0) scale(0.98);
+      background: #14171c;
+    }
+
+    .item-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      .item-icon {
+        font-size: 18px;
+        color: #7d848f;
+        transition: color 0.2s ease;
+      }
+
+      .item-label {
+        font-size: 13.5px;
+        font-weight: 400;
+        color: #ffffff;
+        transition: color 0.2s ease;
+      }
+    }
+
+    .item-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .status-badge {
+        font-size: 12px;
+        color: #7d848f;
+      }
+    }
+
+    .chevron-icon {
+      font-size: 16px;
+      color: #4a505a;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+  }
+}
+
+/* Bottom Logout Action Container */
+.action-container {
+  margin-top: auto;
+
+  .logout-btn {
+    --border-color: #ff6500;
+    --border-radius: 12px;
+    --border-width: 1px;
+    --color: #ff6500;
+    --background-hover: rgba(255, 101, 0, 0.1);
+    --color-hover: #ff7b24;
+    --border-color-hover: #ff7b24;
+
+    margin: 0;
+    height: 48px;
+    font-size: 13.5px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: transform 0.15s ease;
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+}
+
+/* Mobile Screen Viewport */
+@media (max-width: 430px) {
+  .phone-frame {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}

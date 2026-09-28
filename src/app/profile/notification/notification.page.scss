@@ -1,0 +1,248 @@
+/* Global Host Setup */
+ion-content {
+  --background: #000000;
+  --padding-top: 0;
+  --padding-bottom: 0;
+  --padding-start: 0;
+  --padding-end: 0;
+}
+
+/* Outer Mobile Frame */
+.phone-frame {
+  width: 100%;
+  max-width: 390px;
+  min-height: 844px;
+  margin: 20px auto;
+
+  background: #050607;
+  color: #ffffff;
+
+  border: 1px solid #1a1d21;
+  border-radius: 40px;
+
+  overflow: hidden;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+}
+
+/* Page Header */
+.page-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 40px 24px 20px;
+  gap: 16px;
+
+  /* Card-styled back button matching layout */
+  button.back-button,
+  .back-button {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    width: 42px !important;
+    height: 42px !important;
+    background: #0f1115 !important;
+    border: 1px solid #1a1d22 !important;
+    border-radius: 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    outline: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    transition: background 0.2s ease, transform 0.15s ease !important;
+
+    &:hover {
+      background: #15181e !important;
+    }
+
+    &:active {
+      transform: scale(0.95) !important;
+    }
+
+    ion-icon {
+      font-size: 20px !important;
+      color: #ffffff !important;
+    }
+  }
+
+  .header-text-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    .page-title {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.2;
+    }
+
+    .page-subtitle {
+      font-size: 12px;
+      color: #7d848f;
+      line-height: 1.3;
+    }
+  }
+}
+
+/* Content Area */
+.content-body {
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1;
+}
+
+.section-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    color: #4e5562;
+    text-transform: uppercase;
+  }
+
+  .methods-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .method-card {
+      background: #0f1115;
+      border: 1px solid #1a1d22;
+      border-radius: 14px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+
+      .card-left {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex: 1;
+        min-width: 0;
+
+        /* Enclosed Icon Box styling */
+        .icon-box {
+          width: 38px;
+          height: 38px;
+          background: #161a22;
+          border: 1px solid #222732;
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+
+          .card-icon {
+            font-size: 18px;
+            color: #ff5000;
+          }
+        }
+
+        .card-text {
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+          flex: 1;
+          min-width: 0;
+
+          .card-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #ffffff;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+
+          .card-subtitle {
+            font-size: 11px;
+            color: #7d848f;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+
+      /* Synchronized Toggle Switch Style matching accent colors */
+      ion-toggle {
+        --background: #1e2228;
+        --background-checked: #ff5000;
+        --handle-background: #ffffff;
+        --handle-background-checked: #ffffff;
+        --handle-width: 18px;
+        --handle-height: 18px;
+        --handle-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        --height: 22px;
+        --width: 40px;
+        padding: 0;
+        flex-shrink: 0;
+      }
+    }
+  }
+}
+
+/* Footer Save Preferences Button */
+.footer-container {
+  padding: 20px 24px 32px;
+  margin-top: auto;
+  position: relative;
+  z-index: 99;
+  pointer-events: auto;
+
+  .save-button {
+    width: 100%;
+    height: 48px;
+    background: linear-gradient(90deg, #ff5000 0%, #ffb700 100%);
+    border: none;
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    z-index: 100;
+    pointer-events: auto;
+
+    box-shadow: 0 4px 15px rgba(255, 80, 0, 0.3);
+    transition: transform 0.15s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      box-shadow: 0 6px 20px rgba(255, 80, 0, 0.45);
+      filter: brightness(1.05);
+    }
+
+    &:active {
+      transform: scale(0.98);
+      filter: brightness(0.95);
+    }
+  }
+}
+
+/* Mobile Screen Full Height View */
+@media (max-width: 430px) {
+  .phone-frame {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}

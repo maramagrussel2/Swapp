@@ -1,0 +1,39 @@
+<ion-content class="onboarding-content">
+  <div class="onboarding-frame">
+    <div class="onboarding-wrapper">
+      <!-- Glowing Orange Logo -->
+      <div class="logo-container">
+        <div class="glow-ring">
+          <div class="logo-badge">
+            <span class="logo-symbol">S</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text Group -->
+      <div class="text-content">
+        <h1 class="main-title">Swapp</h1>
+        <p class="sub-title">Fast Simple Secure </p>
+        <p class="desc-title">Send money to anyone,<br />anywhere.</p>
+      </div>
+
+      <!-- Pagination Dots -->
+      <div class="pagination-dots">
+        <span class="dot"></span>
+        <span class="dot active"></span>
+        <span class="dot"></span>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="button-group">
+        <button type="button" (click)="goToSignup()" class="btn-orange">
+          Create Account
+        </button>
+        <button type="button" (click)="goToLogin()" class="btn-dark">
+          Login
+        </button>
+        <p class="legal-text">By continuing you agree to our Terms & Privacy Policy.</p>
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,76 @@
+<ion-content>
+  <div class="phone-frame">
+    <!-- Top Header (Stacked Back Button + Title & Subtitle) -->
+    <div class="page-header">
+      <button type="button" class="back-button" (click)="goBack()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </button>
+      <div class="header-text-group">
+        <h2 class="page-title">Notification Settings</h2>
+        <span class="page-subtitle">Manage how you receive alerts and updates</span>
+      </div>
+    </div>
+
+    <!-- Main Content List -->
+    <div class="content-body">
+      <div class="section-container">
+        <span class="section-label">PREFERENCES</span>
+
+        <div class="methods-list">
+          <!-- Push Notifications -->
+          <div class="method-card">
+            <div class="card-left">
+              <ion-icon name="notifications-outline" class="card-icon"></ion-icon>
+              <div class="card-text">
+                <span class="card-title">Push Notifications</span>
+                <span class="card-subtitle">Receive instant alerts on your device</span>
+              </div>
+            </div>
+            <ion-toggle [checked]="pushNotifications" (click)="$event.stopPropagation()"></ion-toggle>
+          </div>
+
+          <!-- Email Notifications -->
+          <div class="method-card">
+            <div class="card-left">
+              <ion-icon name="mail-outline" class="card-icon"></ion-icon>
+              <div class="card-text">
+                <span class="card-title">Email Notifications</span>
+                <span class="card-subtitle">Get updates sent to your email</span>
+              </div>
+            </div>
+            <ion-toggle [checked]="emailNotifications" (click)="$event.stopPropagation()"></ion-toggle>
+          </div>
+
+          <!-- Promos & Offers -->
+          <div class="method-card">
+            <div class="card-left">
+              <ion-icon name="pricetag-outline" class="card-icon"></ion-icon>
+              <div class="card-text">
+                <span class="card-title">Promos & Offers</span>
+                <span class="card-subtitle">Receive special deals and announcements</span>
+              </div>
+            </div>
+            <ion-toggle [checked]="promoUpdates" (click)="$event.stopPropagation()"></ion-toggle>
+          </div>
+
+          <!-- Security Alerts -->
+          <div class="method-card">
+            <div class="card-left">
+              <ion-icon name="shield-checkmark-outline" class="card-icon"></ion-icon>
+              <div class="card-text">
+                <span class="card-title">Security Alerts</span>
+                <span class="card-subtitle">Important login and account updates</span>
+              </div>
+            </div>
+            <ion-toggle [checked]="securityAlerts" (click)="$event.stopPropagation()"></ion-toggle>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Action Button -->
+    <div class="footer-container">
+      <button class="save-button" (click)="savePreferences()">SAVE PREFERENCES</button>
+    </div>
+  </div>
+</ion-content>

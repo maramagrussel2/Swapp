@@ -1,0 +1,257 @@
+.home-content {
+  --background: #0c0c0e !important;
+  background-color: #0c0c0e !important;
+
+  .home-frame {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+    box-sizing: border-box;
+  }
+
+  .home-wrapper {
+    width: 100%;
+    max-width: 360px;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+  }
+
+  /* Header */
+  .top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      .avatar {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+      }
+
+      .greeting {
+        h2 {
+          font-size: 15px;
+          font-weight: 700;
+          color: #ffffff;
+          margin: 0;
+        }
+        p {
+          font-size: 11px;
+          color: #888888;
+          margin: 0;
+        }
+      }
+    }
+
+    .icon-btn {
+      background: #18181b;
+      border: 1px solid #28282e;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      cursor: pointer;
+    }
+  }
+
+  /* Balance Card */
+  .balance-card {
+    background: linear-gradient(135deg, #ff7300 0%, #ff5e00 60%, #d44300 100%);
+    border-radius: 20px;
+    padding: 20px;
+    color: #ffffff;
+    box-shadow: 0 8px 24px rgba(255, 94, 0, 0.35);
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      opacity: 0.9;
+    }
+
+    .card-body {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 10px;
+
+      .amount {
+        font-size: 28px;
+        font-weight: 800;
+        margin: 0;
+      }
+
+      .chevron {
+        font-size: 24px;
+        font-weight: 300;
+      }
+    }
+  }
+
+  /* Action Buttons Grid */
+  .actions-grid {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 8px;
+
+    .action-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+
+      .action-circle {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: #18181b;
+        border: 1px solid #28282e;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+
+      span {
+        font-size: 11px;
+        color: #aaaaaa;
+      }
+    }
+  }
+
+  /* Section Header */
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0;
+    }
+
+    .see-all {
+      font-size: 12px;
+      color: #ff5e00;
+      cursor: pointer;
+    }
+  }
+
+  /* Transactions List */
+  .transactions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    .tx-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .tx-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+
+      .tx-badge {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 16px;
+        color: #ffffff;
+
+        &.starbucks { background: #00704a; }
+        &.grab { background: #00b14f; }
+      }
+
+      .tx-details {
+        flex: 1;
+        margin-left: 12px;
+        display: flex;
+        flex-direction: column;
+
+        .tx-name {
+          font-size: 13px;
+          font-weight: 700;
+          color: #ffffff;
+        }
+
+        .tx-sub {
+          font-size: 11px;
+          color: #777777;
+        }
+      }
+
+      .tx-amount-group {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        .tx-amount {
+          font-size: 13px;
+          font-weight: 700;
+
+          &.green { color: #22c55e; }
+          &.red { color: #ff5e00; }
+        }
+
+        .tx-time {
+          font-size: 10px;
+          color: #666666;
+        }
+      }
+    }
+  }
+
+  /* Bottom Navigation Bar */
+  .bottom-nav {
+    width: 100%;
+    max-width: 390px;
+    height: 60px;
+    background: #121215;
+    border-top: 1px solid #222226;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      color: #666666;
+      cursor: pointer;
+
+      span {
+        font-size: 10px;
+      }
+
+      &.active {
+        color: #ff5e00;
+      }
+    }
+  }
+}

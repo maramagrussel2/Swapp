@@ -1,0 +1,209 @@
+/* Global Host Setup */
+ion-content {
+  --background: #000000;
+  --padding-top: 0;
+  --padding-bottom: 0;
+  --padding-start: 0;
+  --padding-end: 0;
+}
+
+/* Outer Mobile Frame */
+.phone-frame {
+  width: 100%;
+  max-width: 390px;
+  height: 844px;
+  margin: 20px auto;
+
+  background: #0a0b0d;
+  color: #ffffff;
+
+  border: 1px solid #1a1d21;
+  border-radius: 40px;
+
+  overflow: hidden;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+}
+
+/* Header Back Button Container */
+.top-bar {
+  display: flex;
+  align-items: center;
+  padding: 30px 20px 10px;
+
+  .back-btn {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease, transform 0.15s ease;
+
+    &:hover {
+      color: #ff6500;
+      transform: translateX(-2px);
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+}
+
+/* Scrollable Inner Body */
+.scrollable-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 24px 30px;
+  display: flex;
+  flex-direction: column;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Page Header */
+.page-header {
+  text-align: center;
+  margin-bottom: 28px;
+
+  h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+  }
+
+  p {
+    margin: 4px 0 0;
+    font-size: 12px;
+    color: #7d848f;
+  }
+}
+
+/* Form Controls */
+.password-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #7d848f;
+  }
+
+  .input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    input {
+      width: 100%;
+      height: 48px;
+      background: #121418;
+      border: 1px solid #1e2228;
+      border-radius: 12px;
+      padding: 0 44px 0 16px;
+      color: #ffffff;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+      &::placeholder {
+        color: #4a505a;
+      }
+
+      &:focus {
+        border-color: #ff6500;
+        box-shadow: 0 0 0 2px rgba(255, 101, 0, 0.15);
+      }
+    }
+
+    .eye-btn {
+      position: absolute;
+      right: 12px;
+      background: transparent;
+      border: none;
+      color: #7d848f;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: #ffffff;
+      }
+    }
+  }
+
+  .error-msg {
+    font-size: 11px;
+    color: #ff4d4f;
+    margin-top: 2px;
+  }
+}
+
+/* Action Container */
+.action-container {
+  margin-top: auto;
+  padding-top: 20px;
+
+  .save-btn {
+    --background: #ff6500;
+    --background-hover: #ff7b24;
+    --background-activated: #e05900;
+    --background-focused: #ff7b24;
+    --border-radius: 12px;
+    --color: #ffffff;
+
+    margin: 0;
+    height: 48px;
+    font-size: 13.5px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: transform 0.15s ease;
+
+    &:not([disabled]):active {
+      transform: scale(0.98);
+    }
+
+    &[disabled] {
+      --background: #1e2228;
+      --color: #4a505a;
+      opacity: 0.7;
+    }
+  }
+}
+
+/* Mobile Screen Viewport */
+@media (max-width: 430px) {
+  .phone-frame {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,71 @@
+<ion-content class="verify-content">
+  <div class="verify-frame">
+    <div class="verify-wrapper">
+
+      <div class="top-nav">
+        <button type="button" (click)="goBack()" class="back-btn">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+        </button>
+        <h2 class="nav-title">Create Account</h2>
+        <div class="spacer"></div>
+      </div>
+
+      <div class="stepper">
+        <div class="step-node completed">
+          <svg width="12" height="12" fill="none" stroke="#ffffff" stroke-width="3" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <div class="step-line active"></div>
+
+        <div class="step-node active">
+          <span>2</span>
+        </div>
+        <div class="step-line"></div>
+
+        <div class="step-node">
+          <span>3</span>
+        </div>
+        <div class="step-line"></div>
+
+        <div class="step-node">
+          <span>4</span>
+        </div>
+      </div>
+
+      <div class="verify-body">
+        
+        <div class="email-icon-box">
+          <svg width="44" height="44" fill="none" stroke="#aaaaaa" stroke-width="1.5" viewBox="0 0 24 24">
+            <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/>
+          </svg>
+          <div class="check-badge">
+            <svg width="12" height="12" fill="none" stroke="#ffffff" stroke-width="3" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+        </div>
+
+        <h1 class="header-title">Verify Your Email</h1>
+        <p class="header-sub">We've sent a verification link to</p>
+        <p class="email-highlight">{{ userEmail }}</p>
+
+        <div class="info-alert-box">
+          <svg width="20" height="20" fill="none" stroke="#888888" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>
+          </svg>
+          <p>Please check your inbox and click the link to verify your email address.</p>
+        </div>
+
+        <button type="button" (click)="onOpenEmailApp()" class="btn-orange">
+          Open Email App
+        </button>
+
+        <div class="resend-block">
+          <p>Didn't receive the email?</p>
+          <button type="button" (click)="onResendEmail()" class="resend-btn">Resend email</button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</ion-content>

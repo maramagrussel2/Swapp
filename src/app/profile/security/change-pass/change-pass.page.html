@@ -1,0 +1,94 @@
+<ion-content>
+  <div class="phone-frame">
+    <!-- Top Bar Header -->
+    <div class="top-bar">
+      <button type="button" class="back-btn" (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </button>
+    </div>
+
+    <!-- Scrollable Content Container -->
+    <div class="scrollable-content">
+      <!-- Page Header -->
+      <div class="page-header">
+        <h2>Change Password</h2>
+        <p>Ensure your account uses a strong password</p>
+      </div>
+
+      <!-- Password Form -->
+      <form [formGroup]="passwordForm" (ngSubmit)="onSubmit()" class="password-form">
+        <!-- Current Password Field -->
+        <div class="input-group">
+          <label for="currentPassword">Current Password</label>
+          <div class="input-wrapper">
+            <input 
+              [type]="showCurrentPassword ? 'text' : 'password'" 
+              id="currentPassword" 
+              formControlName="currentPassword"
+              placeholder="Enter current password"
+            />
+            <button type="button" class="eye-btn" (click)="toggleShowCurrent()">
+              <ion-icon [name]="showCurrentPassword ? 'eye-off-outline' : 'eye-outline'"></ion-icon>
+            </button>
+          </div>
+          <div class="error-msg" *ngIf="passwordForm.get('currentPassword')?.touched && passwordForm.get('currentPassword')?.invalid">
+            Current password is required.
+          </div>
+        </div>
+
+        <!-- New Password Field -->
+        <div class="input-group">
+          <label for="newPassword">New Password</label>
+          <div class="input-wrapper">
+            <input 
+              [type]="showNewPassword ? 'text' : 'password'" 
+              id="newPassword" 
+              formControlName="newPassword"
+              placeholder="Enter new password"
+            />
+            <button type="button" class="eye-btn" (click)="toggleShowNew()">
+              <ion-icon [name]="showNewPassword ? 'eye-off-outline' : 'eye-outline'"></ion-icon>
+            </button>
+          </div>
+          <div class="error-msg" *ngIf="passwordForm.get('newPassword')?.touched && passwordForm.get('newPassword')?.hasError('required')">
+            New password is required.
+          </div>
+          <div class="error-msg" *ngIf="passwordForm.get('newPassword')?.touched && passwordForm.get('newPassword')?.hasError('minlength')">
+            Password must be at least 8 characters long.
+          </div>
+        </div>
+
+        <!-- Confirm Password Field -->
+        <div class="input-group">
+          <label for="confirmPassword">Confirm New Password</label>
+          <div class="input-wrapper">
+            <input 
+              [type]="showConfirmPassword ? 'text' : 'password'" 
+              id="confirmPassword" 
+              formControlName="confirmPassword"
+              placeholder="Re-enter new password"
+            />
+            <button type="button" class="eye-btn" (click)="toggleShowConfirm()">
+              <ion-icon [name]="showConfirmPassword ? 'eye-off-outline' : 'eye-outline'"></ion-icon>
+            </button>
+          </div>
+          <div class="error-msg" *ngIf="passwordForm.touched && passwordForm.hasError('mismatch')">
+            Passwords do not match.
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="action-container">
+          <ion-button 
+            type="submit" 
+            expand="block" 
+            class="save-btn" 
+            [disabled]="passwordForm.invalid"
+          >
+            Update Password
+          </ion-button>
+        </div>
+      </form>
+    </div>
+  </div>
+</ion-content>

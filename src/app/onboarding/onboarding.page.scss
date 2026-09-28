@@ -1,0 +1,140 @@
+.onboarding-content {
+  --background: #0c0c0e !important;
+  background-color: #0c0c0e !important;
+
+  /* Centers content nicely like a mobile viewport on desktop */
+  .onboarding-frame {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    box-sizing: border-box;
+  }
+
+  .onboarding-wrapper {
+    width: 100%;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 36px;
+  }
+
+  /* Logo */
+  .logo-container {
+    .glow-ring {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 94, 0, 0.45) 0%, rgba(255, 94, 0, 0) 70%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-badge {
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff7300 0%, #ff5e00 60%, #d44300 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 28px rgba(255, 94, 0, 0.55);
+
+      .logo-symbol {
+        font-size: 48px;
+        font-weight: 800;
+        color: #ffffff !important;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        line-height: 1;
+      }
+    }
+  }
+
+  /* Headings */
+  .text-content {
+    .main-title {
+      font-size: 32px !important;
+      font-weight: 700 !important;
+      color: #ffffff !important;
+      margin: 0 0 8px 0 !important;
+    }
+
+    .sub-title {
+      font-size: 15px !important;
+      font-weight: 600 !important;
+      color: #dddddd !important;
+      margin: 0 0 6px 0 !important;
+    }
+
+    .desc-title {
+      font-size: 13px !important;
+      color: #888888 !important;
+      margin: 0 !important;
+      line-height: 1.4 !important;
+    }
+  }
+
+  /* Dots */
+  .pagination-dots {
+    display: flex;
+    gap: 8px;
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #28282e;
+
+      &.active {
+        background: #ff5e00 !important;
+        width: 18px;
+        border-radius: 4px;
+      }
+    }
+  }
+
+  /* Buttons */
+  .button-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .btn-orange {
+      width: 100%;
+      height: 52px;
+      border-radius: 26px;
+      border: none !important;
+      outline: none;
+      background: #ff5e00 !important;
+      color: #ffffff !important;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 18px rgba(255, 94, 0, 0.45);
+    }
+
+    .btn-dark {
+      width: 100%;
+      height: 52px;
+      border-radius: 26px;
+      border: 1.5px solid #ff5e00 !important;
+      outline: none;
+      background: transparent !important;
+      color: #ffffff !important;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .legal-text {
+      font-size: 10px;
+      color: #555555 !important;
+      margin: 6px 0 0 0;
+    }
+  }
+}

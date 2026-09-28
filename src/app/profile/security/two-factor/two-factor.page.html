@@ -1,0 +1,68 @@
+<ion-content>
+  <div class="phone-frame">
+    <!-- Top Bar Header -->
+    <div class="top-bar">
+      <button type="button" class="back-btn" (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </button>
+    </div>
+
+    <!-- Scrollable Content Container -->
+    <div class="scrollable-content">
+      <!-- Page Header -->
+      <div class="page-header">
+        <h2>Two-Factor Authentication</h2>
+        <p>Add an extra layer of security to your account</p>
+      </div>
+
+      <!-- Main Toggle Card -->
+      <div class="status-card">
+        <div class="status-info">
+          <ion-icon name="shield-checkmark-outline" class="status-icon" [class.active]="twoFactorEnabled"></ion-icon>
+          <div class="status-text">
+            <h3>2FA Status</h3>
+            <p>{{ twoFactorEnabled ? 'Enabled & Protecting Account' : 'Currently Disabled' }}</p>
+          </div>
+        </div>
+        <ion-toggle [checked]="twoFactorEnabled" (ionChange)="toggleTwoFactor($event)"></ion-toggle>
+      </div>
+
+      <!-- 2FA Methods List -->
+      <div class="methods-section" *ngIf="twoFactorEnabled">
+        <span class="section-title">AUTHENTICATION METHODS</span>
+
+        <!-- Authenticator App Option -->
+        <div class="method-item" (click)="selectMethod('app')">
+          <div class="method-left">
+            <ion-icon name="phone-portrait-outline" class="method-icon"></ion-icon>
+            <div class="method-details">
+              <h4>Authenticator App</h4>
+              <p>Google Authenticator, Authy, etc.</p>
+            </div>
+          </div>
+          <ion-icon [name]="selectedMethod === 'app' ? 'checkmark-circle' : 'chevron-forward-outline'" class="chevron-icon" [class.selected]="selectedMethod === 'app'"></ion-icon>
+        </div>
+
+        <!-- SMS Option -->
+        <div class="method-item" (click)="selectMethod('sms')">
+          <div class="method-left">
+            <ion-icon name="chatbubble-ellipses-outline" class="method-icon"></ion-icon>
+            <div class="method-details">
+              <h4>SMS Verification</h4>
+              <p>Send code to +63 918 *** 6543</p>
+            </div>
+          </div>
+          <ion-icon [name]="selectedMethod === 'sms' ? 'checkmark-circle' : 'chevron-forward-outline'" class="chevron-icon" [class.selected]="selectedMethod === 'sms'"></ion-icon>
+        </div>
+      </div>
+
+      <!-- Action Button (Identical Font & Gradient as Edit Information) -->
+      <!-- Action Container -->
+<div class="action-container" *ngIf="twoFactorEnabled">
+  <ion-button expand="block" class="edit-info-style-btn" (click)="saveSettings()">
+    SAVE PREFERENCES
+  </ion-button>
+</div>
+    </div>
+  </div>
+</ion-content>

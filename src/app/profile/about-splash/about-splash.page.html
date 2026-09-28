@@ -1,0 +1,70 @@
+<ion-content>
+  <div class="phone-frame">
+    <!-- Header -->
+    <div class="page-header">
+      <button type="button" class="back-button" (click)="goBack()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </button>
+      <div class="header-text-group">
+        <h2 class="page-title">About Splash</h2>
+        <span class="page-subtitle">Learn more about the app</span>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content-body">
+      <!-- App Brand & Swapp Logo Section -->
+      <div class="brand-section">
+        <div class="logo-wrapper">
+          <svg class="swapp-logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="swappTopGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FF9E00" />
+                <stop offset="100%" stop-color="#FF5500" />
+              </linearGradient>
+              <linearGradient id="swappBottomGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FF5500" />
+                <stop offset="100%" stop-color="#D03000" />
+              </linearGradient>
+            </defs>
+            
+            <!-- Top Arrow (Right pointing) -->
+            <path d="M 28 36 C 28 22, 48 18, 62 18 L 62 8 L 86 26 L 62 44 L 62 34 C 46 34, 40 38, 40 44 C 40 46, 42 48, 45 49 L 33 55 C 29 50, 28 43, 28 36 Z" fill="url(#swappTopGrad)" />
+            
+            <!-- Bottom Arrow (Left pointing) -->
+            <path d="M 72 64 C 72 78, 52 82, 38 82 L 38 92 L 14 74 L 38 56 L 38 66 C 54 66, 60 62, 60 56 C 60 54, 58 52, 55 51 L 67 45 C 71 50, 72 57, 72 64 Z" fill="url(#swappBottomGrad)" />
+          </svg>
+        </div>
+
+        <h3 class="app-name">Swapp</h3>
+        <span class="app-version">Version 1.0.0</span>
+        <p class="app-description">
+          Forge your journey. Start building something great.
+        </p>
+      </div>
+
+      <!-- Links Container -->
+      <div class="section-container">
+        <div class="menu-cards-list">
+          <!-- What's New -->
+          <div class="menu-card" (click)="goToWhatsNew()">
+            <div class="card-left">
+              <ion-icon name="sparkles-outline" class="card-icon"></ion-icon>
+              <span class="card-title">What's New</span>
+            </div>
+            <ion-icon name="chevron-forward-outline" class="chevron-icon"></ion-icon>
+          </div>
+
+          <!-- Rate Our App -->
+          <div class="menu-card" (click)="rateApp()">
+            <div class="card-left">
+              <ion-icon name="star-outline" class="card-icon"></ion-icon>
+              <span class="card-title">Rate Our App</span>
+            </div>
+            <ion-icon name="chevron-forward-outline" class="chevron-icon"></ion-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
