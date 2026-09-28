@@ -1,78 +1,19 @@
-* {
-  font-family:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
-    sans-serif !important;
+ion-content {
+  --background: #050607;
+}
+
+.phone-frame {
+  width: 402px;
+  height: 874px;
+  margin: 29px auto 0;
+
+  background: #080a0b;
+  color: #ffffff;
+
+  border: 2px solid #303333;
+  border-radius: 34px;
+
+  overflow: hidden;
+
   box-sizing: border-box;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #0f0f10;
-  overflow: hidden;
-}
-
-.iphone-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background-color: #0f0f10;
-}
-
-.iphone-frame {
-  position: relative;
-  width: 375px;
-  height: 812px;
-  background: #1e1e1e;
-  border-radius: 48px;
-  border: 12px solid #2d2d2d;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-  overflow: hidden;
-}
-
-.iphone-notch {
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120px;
-  height: 30px;
-  background-color: #000000;
-  border-radius: 20px;
-  z-index: 99999;
-  pointer-events: none !important;
-}
-
-.iphone-screen {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  z-index: 10;
-
-  ion-app {
-    width: 100%;
-    height: 100%;
-  }
-
-  ion-content {
-    --overflow: hidden;
-  }
-}
-
-.home-indicator {
-  position: absolute;
-  bottom: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 130px;
-  height: 4px;
-  background-color: rgba(255, 255, 255, 0.4);
-  border-radius: 3px;
-  z-index: 99999;
-  pointer-events: none !important;
 }

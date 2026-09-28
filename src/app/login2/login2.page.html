@@ -1,42 +1,107 @@
-<ion-content>
-  <div class="container">
-    <!-- Back pill -->
-    <button class="back-pill" (click)="goBack()">
-      <ion-icon name="arrow-back"></ion-icon>
-    </button>
+<ion-content [fullscreen]="true" class="login2-content">
+  <div class="login2-page">
+    <!-- =========================
+         HEADER
+    ========================== -->
 
-    <div class="top-section">
-      <div class="logo-circle small"><span>S</span></div>
-      <h2>Enter your MPIN</h2>
-      <p class="mobile">{{ mobile }}</p>
+    <div class="login-header">
+      <button class="back-button" type="button" (click)="goBack()">
+        <span class="back-icon">‹</span>
+        <span>Back</span>
+      </button>
 
-      <!-- Dots indicator -->
-      <div class="dots">
-        <span
-          *ngFor="let d of dots; let i = index"
-          class="dot"
-          [class.filled]="i < mpin.length"
-        ></span>
+      <div class="security-icon">
+        <span>🔒</span>
       </div>
     </div>
 
-    <!-- Keypad -->
+    <!-- =========================
+         TITLE
+    ========================== -->
+
+    <div class="title-section">
+      <h1>Enter your MPIN</h1>
+
+      <p>Enter your 4-digit MPIN to continue</p>
+    </div>
+
+    <!-- =========================
+         MPIN DOTS
+    ========================== -->
+
+    <div class="mpin-section">
+      <span class="mpin-dot" [class.filled]="mpin.length >= 1"> </span>
+
+      <span class="mpin-dot" [class.filled]="mpin.length >= 2"> </span>
+
+      <span class="mpin-dot" [class.filled]="mpin.length >= 3"> </span>
+
+      <span class="mpin-dot" [class.filled]="mpin.length >= 4"> </span>
+    </div>
+
+    <!-- =========================
+         KEYPAD
+    ========================== -->
+
     <div class="keypad">
-      <button
-        *ngFor="let key of keys"
-        class="key"
-        [class.hidden]="!key"
-        (click)="press(key)"
-      >
-        <span *ngIf="key !== 'back'">{{ key }}</span>
-        <ion-icon *ngIf="key === 'back'" name="backspace-outline"></ion-icon>
+      <!-- 1 -->
+      <button type="button" class="key" (click)="addDigit('1')">1</button>
+
+      <!-- 2 -->
+      <button type="button" class="key" (click)="addDigit('2')">2</button>
+
+      <!-- 3 -->
+      <button type="button" class="key" (click)="addDigit('3')">3</button>
+
+      <!-- 4 -->
+      <button type="button" class="key" (click)="addDigit('4')">4</button>
+
+      <!-- 5 -->
+      <button type="button" class="key" (click)="addDigit('5')">5</button>
+
+      <!-- 6 -->
+      <button type="button" class="key" (click)="addDigit('6')">6</button>
+
+      <!-- 7 -->
+      <button type="button" class="key" (click)="addDigit('7')">7</button>
+
+      <!-- 8 -->
+      <button type="button" class="key" (click)="addDigit('8')">8</button>
+
+      <!-- 9 -->
+      <button type="button" class="key" (click)="addDigit('9')">9</button>
+
+      <!-- BIOMETRICS -->
+      <button type="button" class="key biometric-key" (click)="clearMpin()">
+        <span class="fingerprint-icon">◉</span>
+        <span class="biometric-text">Fingerprint</span>
+      </button>
+
+      <!-- 0 -->
+      <button type="button" class="key" (click)="addDigit('0')">0</button>
+
+      <!-- CLEAR -->
+      <button type="button" class="key clear-key" (click)="clearMpin()">
+        <span>⌫</span>
       </button>
     </div>
 
-    <!-- Bottom links (parang GCash) -->
-    <div class="bottom-links">
-      <a>Help Center</a>
-      <a>Forgot MPIN?</a>
+    <!-- =========================
+         LOGIN BUTTON
+    ========================== -->
+
+    <button class="login-button" type="button" (click)="login()">Login</button>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <div class="login-footer">
+      <button type="button" class="footer-button">Help Center</button>
+
+      <span class="footer-divider"></span>
+
+      <button type="button" class="footer-button">Forgot MPIN</button>
     </div>
   </div>
 </ion-content>

@@ -1,0 +1,80 @@
+<ion-content class="review-content">
+  <div class="review-page">
+    <!-- Header -->
+    <div class="top-section">
+      <button type="button" class="back-button" (click)="goBack()">
+        <span>←</span>
+      </button>
+
+      <button type="button" class="cancel-button" (click)="cancelTransfer()">
+        Cancel
+      </button>
+    </div>
+
+    <!-- Title -->
+    <div class="title-section">
+      <h1>Review Transfer</h1>
+
+      <p>Check the details before confirming</p>
+    </div>
+
+    <!-- Recipient -->
+    <div class="section-label">Recipient</div>
+
+    <div class="recipient-card">
+      <div class="recipient-avatar">{{ recipientInitial }}</div>
+
+      <div class="recipient-info">
+        <span class="recipient-name"> {{ recipient }} </span>
+
+        <span class="recipient-detail"> Recipient </span>
+      </div>
+    </div>
+
+    <!-- Amount -->
+    <div class="section-label amount-label">Amount</div>
+
+    <div class="amount-card">
+      <span class="amount"> {{ currencySymbol }}{{ amount }} </span>
+
+      <span class="currency"> {{ currencyCode }} </span>
+    </div>
+
+    <!-- Payment Method -->
+    <div class="section-label payment-label">Payment Method</div>
+
+    <div class="payment-card">
+      <div class="payment-icon">{{ paymentIcon }}</div>
+
+      <div class="payment-info">
+        <span class="payment-name"> {{ paymentName }} </span>
+
+        <span class="payment-detail"> {{ paymentDetail }} </span>
+      </div>
+    </div>
+
+    <!-- Transfer Details -->
+    <div class="details-card">
+      <div class="detail-row">
+        <span> Transfer fee </span>
+
+        <span> {{ currencySymbol }}0.00 </span>
+      </div>
+
+      <div class="detail-divider"></div>
+
+      <div class="detail-row total-row">
+        <span> Total </span>
+
+        <span> {{ currencySymbol }}{{ amount }} </span>
+      </div>
+    </div>
+
+    <!-- Confirm -->
+    <button type="button" class="confirm-button" (click)="confirmTransfer()">
+      <span> Confirm Transfer </span>
+
+      <span class="confirm-arrow"> → </span>
+    </button>
+  </div>
+</ion-content>

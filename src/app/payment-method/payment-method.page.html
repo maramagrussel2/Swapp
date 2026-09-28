@@ -1,0 +1,117 @@
+<ion-content class="payment-content">
+  <div class="payment-page">
+    <!-- Header -->
+    <div class="top-section">
+      <button type="button" class="back-button" (click)="goBack()">
+        <span>←</span>
+      </button>
+
+      <button type="button" class="cancel-button" (click)="goBack()">
+        Cancel
+      </button>
+    </div>
+
+    <!-- Title -->
+    <div class="title-section">
+      <h1>Payment Method</h1>
+      <p>Choose how you'd like to send</p>
+    </div>
+
+    <!-- Transfer Summary -->
+    <div class="summary-label">Transfer Summary</div>
+
+    <div class="summary-card">
+      <div class="summary-row">
+        <div class="summary-info">
+          <span class="summary-title"> Sending to </span>
+
+          <span class="summary-value"> {{ recipient }} </span>
+        </div>
+      </div>
+
+      <div class="summary-divider"></div>
+
+      <div class="summary-row">
+        <div class="summary-info">
+          <span class="summary-title"> Amount </span>
+
+          <span class="summary-value amount-value">
+            {{ currencySymbol }}{{ amount }}
+          </span>
+        </div>
+
+        <span class="currency-code"> {{ currencyCode }} </span>
+      </div>
+    </div>
+
+    <!-- Payment Method Label -->
+    <div class="method-label">Select payment method</div>
+
+    <!-- GCash -->
+    <button
+      type="button"
+      class="method-card"
+      [class.selected-method]="selectedMethod === 'gcash'"
+      (click)="selectMethod('gcash')"
+    >
+      <div class="method-icon gcash-icon">G</div>
+
+      <div class="method-info">
+        <span class="method-name"> GCash </span>
+
+        <span class="method-description"> GCash Wallet </span>
+      </div>
+
+      <div class="radio">
+        <span *ngIf="selectedMethod === 'gcash'"> ✓ </span>
+      </div>
+    </button>
+
+    <!-- Bank Account -->
+    <button
+      type="button"
+      class="method-card"
+      [class.selected-method]="selectedMethod === 'bank'"
+      (click)="selectMethod('bank')"
+    >
+      <div class="method-icon bank-icon">🏦</div>
+
+      <div class="method-info">
+        <span class="method-name"> Bank Account </span>
+
+        <span class="method-description"> BDO •••• 4521 </span>
+      </div>
+
+      <div class="radio">
+        <span *ngIf="selectedMethod === 'bank'"> ✓ </span>
+      </div>
+    </button>
+
+    <!-- Debit / Credit Card -->
+    <button
+      type="button"
+      class="method-card"
+      [class.selected-method]="selectedMethod === 'card'"
+      (click)="goToDebitCreditCard()"
+    >
+      <div class="method-icon card-icon">💳</div>
+
+      <div class="method-info">
+        <span class="method-name"> Debit / Credit Card </span>
+
+        <span class="method-description"> Visa / Mastercard </span>
+      </div>
+
+      <div class="radio">
+        <span *ngIf="selectedMethod === 'card'"> ✓ </span>
+      </div>
+    </button>
+
+    <!-- Continue -->
+    <button type="button" class="continue-button" (click)="continuePayment()">
+      <span> Continue </span>
+
+      <span class="continue-arrow"> → </span>
+    </button>
+  </div>
+</ion-content>

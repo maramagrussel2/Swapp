@@ -1,157 +1,705 @@
+/* =========================
+   ION CONTENT
+========================= */
+
 ion-content {
-  --background: linear-gradient(180deg, #084298 0%, #0d6efd 55%, #3d8bfd 100%);
+  --background: #050607;
 }
 
-.container {
-  height: 100%;
+.login-content {
+  --background: #050607;
+}
+
+/* =========================
+   MAIN PHONE FRAME
+========================= */
+
+.login-page {
+  position: relative;
+
+  width: 402px;
+  height: 874px;
+
+  margin: 0 auto;
+
+  box-sizing: border-box;
+
+  background: #080a0b;
+  color: #ffffff;
+
+  border: 2px solid #303333;
+  border-radius: 34px;
+
+  overflow: hidden;
+
+  font-family: Arial, sans-serif;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.login-header {
+  position: absolute;
+
+  top: 28px;
+  left: 22px;
+  right: 22px;
+
   display: flex;
-  flex-direction: column;
-  padding: 24px;
+  align-items: center;
+  justify-content: space-between;
+
+  z-index: 20;
 }
 
-.back-pill {
-  width: 44px;
-  height: 32px;
-  border: none;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(4px);
-  color: #fff;
-  font-size: 18px;
+/* BACK BUTTON */
+
+.back-button {
+  height: 42px;
+
+  padding: 0 15px;
+
+  border: 1px solid #252829;
+
+  border-radius: 13px;
+
+  background: #111314;
+
+  color: #dddddd;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  font-size: 11px;
+
   cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.back-button:hover {
+  background: #191b1c;
+
+  border-color: #ff6500;
+
+  transform: translateX(-2px);
+}
+
+.back-button:active {
+  transform: scale(0.97);
+}
+
+/* BACK ICON */
+
+.back-icon {
+  color: #ff6500;
+
+  font-size: 24px;
+
+  line-height: 1;
+}
+
+/* SECURITY ICON */
+
+.security-icon {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 12px;
+
+  background: #151718;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  font-size: 16px;
 }
 
-.top-section {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+/* =========================
+   TITLE
+========================= */
 
-.logo-circle {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 28px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+.title-section {
+  position: absolute;
 
-  span {
-    color: #0d6efd;
-    font-size: 32px;
-    font-weight: 800;
-  }
-}
+  top: 122px;
 
-.phone-pill {
-  background: #fff;
-  border-radius: 30px;
-  padding: 4px 20px;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  max-width: 320px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  left: 22px;
+  right: 22px;
 
-  .prefix {
-    color: #0d6efd;
-    font-weight: 800;
-    margin-right: 10px;
-    font-size: 17px;
-  }
-
-  input {
-    border: none;
-    outline: none;
-    flex: 1;
-    padding: 14px 0;
-    font-size: 17px;
-    letter-spacing: 1px;
-    color: #0d47a1;
-    background: transparent;
-
-    &::placeholder {
-      color: #9ec5fe;
-    }
-  }
-}
-
-.hint {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 14px;
-  margin-top: 16px;
-}
-
-.mpin-box {
-  align-self: center;
-  width: 180px;
-  background: #fff;
-  border: none;
-  border-radius: 20px;
-  padding: 20px 16px 14px;
-  cursor: pointer;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-  margin-bottom: 32px;
-  transition: transform 0.1s;
-
-  &:active {
-    transform: scale(0.96);
-  }
-
-  &:disabled {
-    opacity: 0.6;
-  }
-
-  .mpin-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 14px);
-    gap: 8px;
-    justify-content: center;
-    margin-bottom: 12px;
-
-    span {
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      border: 2px solid #0d6efd;
-    }
-  }
-
-  p {
-    margin: 0;
-    color: #0d6efd;
-    font-weight: 700;
-    font-size: 14px;
-  }
-}
-
-.version {
   text-align: center;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 12px;
-  margin: 0;
-}
-.shake {
-  animation: shake 0.4s;
-  border: 2px solid #ff6b6b !important;
+
+  z-index: 5;
 }
 
-@keyframes shake {
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(-6px);
-  }
-  75% {
-    transform: translateX(6px);
+.title-section h1 {
+  margin: 0 0 9px;
+
+  color: #ffffff;
+
+  font-size: 24px;
+
+  font-weight: 600;
+
+  letter-spacing: -0.4px;
+}
+
+.title-section p {
+  margin: 0;
+
+  color: #777777;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+/* =========================
+   INPUT SECTION
+========================= */
+
+.input-section {
+  position: absolute;
+
+  top: 212px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 282px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  z-index: 30;
+}
+
+.input-section label {
+  margin-bottom: 8px;
+
+  color: #dddddd;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+/* =========================
+   INPUT WRAPPER
+========================= */
+
+.input-wrapper {
+  width: 100%;
+  height: 52px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  border: 1px solid #252829;
+
+  border-radius: 14px;
+
+  background: #111314;
+
+  overflow: hidden;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.input-wrapper:focus-within {
+  border-color: #ff6500;
+
+  box-shadow: 0 0 0 2px rgba(255, 101, 0, 0.08);
+}
+
+/* =========================
+   COUNTRY SELECTOR
+========================= */
+
+.country-selector {
+  height: 100%;
+
+  min-width: 88px;
+
+  padding: 0 10px;
+
+  border: none;
+
+  border-right: 1px solid #252829;
+
+  background: transparent;
+
+  color: #aaaaaa;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 6px;
+
+  font-size: 11px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.country-selector:hover {
+  background: #191b1c;
+
+  color: #ffffff;
+}
+
+/* FLAG */
+
+.country-flag {
+  font-size: 15px;
+}
+
+/* CODE */
+
+.country-code {
+  color: #aaaaaa;
+
+  font-size: 11px;
+}
+
+/* ARROW */
+
+.dropdown-arrow {
+  color: #ff6500;
+
+  font-size: 11px;
+
+  margin-left: 1px;
+}
+
+/* =========================
+   MOBILE INPUT
+========================= */
+
+.mobile-input {
+  flex: 1;
+
+  width: 100%;
+
+  height: 100%;
+
+  min-width: 0;
+
+  padding: 0 13px;
+
+  box-sizing: border-box;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-size: 13px;
+}
+
+.mobile-input::placeholder {
+  color: #555758;
+}
+
+/* =========================
+   COUNTRY DROPDOWN
+========================= */
+
+.country-list {
+  position: absolute;
+
+  top: 76px;
+
+  left: 0;
+
+  width: 282px;
+
+  max-height: 180px;
+
+  overflow-y: auto;
+
+  padding: 6px;
+
+  box-sizing: border-box;
+
+  background: #111314;
+
+  border: 1px solid #303333;
+
+  border-radius: 14px;
+
+  z-index: 100;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
+}
+
+/* SCROLLBAR */
+
+.country-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.country-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.country-list::-webkit-scrollbar-thumb {
+  background: #333536;
+
+  border-radius: 10px;
+}
+
+/* =========================
+   COUNTRY OPTION
+========================= */
+
+.country-option {
+  width: 100%;
+
+  height: 40px;
+
+  padding: 0 10px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.country-option:hover {
+  background: #191b1c;
+}
+
+/* FLAG */
+
+.option-flag {
+  width: 25px;
+
+  font-size: 17px;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+/* COUNTRY NAME */
+
+.option-name {
+  flex: 1;
+
+  color: #dddddd;
+
+  font-size: 10px;
+}
+
+/* COUNTRY CODE */
+
+.option-code {
+  color: #777777;
+
+  font-size: 10px;
+}
+
+.country-option:hover .option-code {
+  color: #ff6500;
+}
+
+/* =========================
+   INPUT HINT
+========================= */
+
+.input-hint {
+  margin-top: 8px;
+
+  color: #555758;
+
+  font-size: 8px;
+
+  line-height: 1.4;
+}
+
+/* =========================
+   CONTINUE CARD
+========================= */
+
+.main-square {
+  position: absolute;
+
+  top: 350px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 282px;
+
+  height: 108px;
+
+  padding: 18px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #252829;
+
+  border-radius: 18px;
+
+  background: #111314;
+
+  color: #ffffff;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 17px;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  z-index: 10;
+
+  transition:
+    top 0.25s ease,
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* =========================
+   MOVE DOWN WHEN DROPDOWN
+   IS OPEN
+========================= */
+
+.login-page.country-open .main-square {
+  top: 490px;
+}
+
+/* =========================
+   CONTINUE HOVER
+========================= */
+
+.main-square:hover {
+  transform: translateX(-50%) translateY(-4px);
+
+  background: #151515;
+
+  border-color: #ff6500;
+
+  box-shadow:
+    0 0 0 1px #ff6500,
+    0 9px 24px rgba(255, 101, 0, 0.18);
+}
+
+.main-square:active {
+  transform: translateX(-50%) scale(0.98);
+}
+
+/* =========================
+   KEYPAD ICON
+========================= */
+
+.keypad-icon {
+  width: 60px;
+  height: 60px;
+
+  flex-shrink: 0;
+
+  border-radius: 16px;
+
+  background: linear-gradient(135deg, #ff4500, #ffb900);
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 7px);
+
+  grid-template-rows: repeat(3, 7px);
+
+  align-content: center;
+
+  justify-content: center;
+
+  gap: 5px;
+
+  box-shadow: 0 6px 18px rgba(255, 80, 0, 0.2);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* KEYPAD DOTS */
+
+.keypad-icon span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+}
+
+/* KEYPAD HOVER */
+
+.main-square:hover .keypad-icon {
+  transform: scale(1.05);
+
+  box-shadow: 0 8px 22px rgba(255, 80, 0, 0.35);
+}
+
+/* =========================
+   CONTINUE TEXT
+========================= */
+
+.continue-text {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.continue-title {
+  color: #ffffff;
+
+  font-size: 15px;
+
+  font-weight: 600;
+}
+
+.continue-subtitle {
+  color: #777777;
+
+  font-size: 10px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.login-footer {
+  position: absolute;
+
+  left: 50%;
+
+  bottom: 48px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  white-space: nowrap;
+
+  z-index: 20;
+}
+
+/* FOOTER BUTTON */
+
+.footer-button {
+  border: none;
+
+  background: transparent;
+
+  color: #777777;
+
+  font-size: 10px;
+
+  padding: 5px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.footer-button:hover {
+  color: #ff6500;
+}
+
+/* FOOTER ICON */
+
+.footer-icon {
+  color: #ff6500;
+
+  font-size: 11px;
+}
+
+/* DIVIDER */
+
+.footer-divider {
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: #444748;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 430px) {
+  .login-page {
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    border: none;
+
+    border-radius: 0;
   }
 }

@@ -1,0 +1,127 @@
+<ion-content class="card-content">
+  <div class="card-page">
+    <!-- HEADER -->
+    <div class="top-section">
+      <button type="button" class="back-button" (click)="goBack()">
+        <span>←</span>
+        <span class="back-text">Back</span>
+      </button>
+
+      <button type="button" class="cancel-button" (click)="goBack()">
+        Cancel
+      </button>
+    </div>
+
+    <!-- TITLE -->
+    <div class="title-section">
+      <h1>Debit/Credit Card</h1>
+      <p>Add your card to continue</p>
+    </div>
+
+    <!-- CARD PREVIEW -->
+    <div class="card-preview">
+      <div class="card-top">
+        <span class="card-type">VISA</span>
+
+        <div class="chip">▦</div>
+      </div>
+
+      <div class="card-number-preview">•••• •••• •••• 0000</div>
+
+      <div class="card-bottom">
+        <div>
+          <span class="preview-label">CARDHOLDER</span>
+          <span class="preview-value">
+            {{ cardholderName || 'YOUR NAME' }}
+          </span>
+        </div>
+
+        <div>
+          <span class="preview-label">EXPIRES</span>
+          <span class="preview-value"> {{ expiryDate || 'MM/YY' }} </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD NUMBER -->
+    <div class="field-group card-number-field">
+      <label for="cardNumber">Card Number</label>
+
+      <div class="input-box">
+        <input
+          id="cardNumber"
+          type="tel"
+          inputmode="numeric"
+          maxlength="19"
+          [(ngModel)]="cardNumber"
+          placeholder="0000 0000 0000 0000"
+        />
+      </div>
+    </div>
+
+    <!-- EXPIRY + CVV -->
+    <div class="two-fields">
+      <div class="field-group">
+        <label for="expiryDate">Expiry Date</label>
+
+        <div class="input-box">
+          <input
+            id="expiryDate"
+            type="text"
+            maxlength="5"
+            [(ngModel)]="expiryDate"
+            placeholder="MM / YY"
+          />
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label for="cvv">CVV</label>
+
+        <div class="input-box">
+          <input
+            id="cvv"
+            type="password"
+            inputmode="numeric"
+            maxlength="3"
+            [(ngModel)]="cvv"
+            placeholder="•••"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- CARDHOLDER -->
+    <div class="field-group cardholder-field">
+      <label for="cardholderName"> Cardholder Name </label>
+
+      <div class="input-box">
+        <input
+          id="cardholderName"
+          type="text"
+          [(ngModel)]="cardholderName"
+          placeholder="Enter name on card"
+        />
+      </div>
+    </div>
+
+    <!-- SECURITY NOTICE -->
+    <div class="security-notice">
+      <div class="security-icon">🔒</div>
+
+      <div class="security-text">
+        <span class="security-title"> Your card is secure </span>
+
+        <span class="security-description">
+          Your card information is protected
+        </span>
+      </div>
+    </div>
+
+    <!-- CONTINUE -->
+    <button type="button" class="continue-button" (click)="addCard()">
+      <span>Continue</span>
+      <span class="continue-arrow">→</span>
+    </button>
+  </div>
+</ion-content>

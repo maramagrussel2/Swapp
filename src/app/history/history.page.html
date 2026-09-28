@@ -1,0 +1,156 @@
+<ion-content [fullscreen]="true" class="history-content">
+  <div class="history-page">
+    <!-- HEADER -->
+    <div class="top-section">
+      <button type="button" class="back-button" (click)="goBack()">
+        <span class="back-icon">←</span>
+        <span>Back</span>
+      </button>
+
+      <h1>History</h1>
+
+      <button type="button" class="filter-button">⚙</button>
+    </div>
+
+    <!-- FILTER PILLS -->
+    <div class="filter-pills">
+      <button
+        type="button"
+        *ngFor="let btn of ['All', 'Sent', 'Received', 'Top-Up']"
+        class="filter-pill"
+        [class.active]="activeFilter === btn"
+        (click)="filterTransactions(btn)"
+      >
+        {{ btn }}
+      </button>
+    </div>
+
+    <!-- TODAY -->
+    <div
+      class="transaction-group"
+      *ngIf="getTransactionsByGroup('Today').length > 0"
+    >
+      <div class="group-title">Today</div>
+
+      <div
+        class="transaction-card"
+        *ngFor="let tx of getTransactionsByGroup('Today')"
+      >
+        <!-- LEFT -->
+        <div class="transaction-left">
+          <div class="avatar" [style.background-color]="tx.avatarBg">
+            {{ tx.initials }}
+          </div>
+
+          <div class="transaction-info">
+            <span class="transaction-detail"> {{ tx.detail }} </span>
+
+            <span class="transaction-name"> {{ tx.name }} </span>
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="transaction-right">
+          <span
+            class="transaction-amount"
+            [class.sent]="tx.type === 'sent'"
+            [class.received]="tx.type !== 'sent'"
+          >
+            {{ tx.amount }}
+          </span>
+
+          <span class="transaction-time"> {{ tx.time }} </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- YESTERDAY -->
+    <div
+      class="transaction-group yesterday"
+      *ngIf="getTransactionsByGroup('Yesterday').length > 0"
+    >
+      <div class="group-title">Yesterday</div>
+
+      <div
+        class="transaction-card"
+        *ngFor="let tx of getTransactionsByGroup('Yesterday')"
+      >
+        <!-- LEFT -->
+        <div class="transaction-left">
+          <div class="avatar" [style.background-color]="tx.avatarBg">
+            {{ tx.initials }}
+          </div>
+
+          <div class="transaction-info">
+            <span class="transaction-detail"> {{ tx.detail }} </span>
+
+            <span class="transaction-name"> {{ tx.name }} </span>
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="transaction-right">
+          <span
+            class="transaction-amount"
+            [class.sent]="tx.type === 'sent'"
+            [class.received]="tx.type !== 'sent'"
+          >
+            {{ tx.amount }}
+          </span>
+
+          <span class="transaction-time"> {{ tx.time }} </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- EMPTY STATE -->
+    <div class="empty-state" *ngIf="filteredTransactions.length === 0">
+      <div class="empty-icon">↔</div>
+
+      <span class="empty-title"> No transactions </span>
+
+      <span class="empty-text">
+        There are no transactions for this filter.
+      </span>
+    </div>
+
+    <!-- BOTTOM NAV -->
+    <div class="bottom-nav">
+      <button type="button" class="nav-item" (click)="goHome()">
+        <span class="nav-icon">⌂</span>
+        <span>Home</span>
+      </button>
+
+      <button type="button" class="nav-item">
+        <span class="nav-icon">□</span>
+        <span>Inbox</span>
+      </button>
+
+      <!-- CENTER QR -->
+      <button type="button" class="nav-item qr-nav" (click)="goToQRGenerator()">
+        <span class="qr-hidden-icon"></span>
+        <span class="qr-label">QR</span>
+      </button>
+
+      <button type="button" class="nav-item">
+        <span class="nav-icon">⇄</span>
+        <span>Convert</span>
+      </button>
+
+      <button type="button" class="nav-item">
+        <span class="nav-icon">♙</span>
+        <span>Profile</span>
+      </button>
+    </div>
+
+    <!-- FLOATING QR -->
+    <button
+      type="button"
+      class="floating-qr"
+      aria-label="QR"
+      (click)="goToQRGenerator()"
+    >
+      ▦
+    </button>
+  </div>
+</ion-content>

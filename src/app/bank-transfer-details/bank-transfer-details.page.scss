@@ -1,0 +1,553 @@
+ion-content {
+  --background: #050607;
+}
+
+.details-content {
+  --background: #050607;
+}
+
+/* =========================
+   MAIN PAGE
+   ========================= */
+
+.details-page {
+  position: relative;
+
+  width: 402px;
+  height: 874px;
+
+  margin: 0 auto;
+
+  box-sizing: border-box;
+
+  background: #080a0b;
+  color: #ffffff;
+
+  border: 2px solid #303333;
+  border-radius: 34px;
+
+  overflow: hidden;
+
+  font-family: Arial, sans-serif;
+}
+
+/* =========================
+   HEADER
+   ========================= */
+
+.top-section {
+  position: absolute;
+
+  top: 27px;
+  left: 22px;
+  right: 22px;
+
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 20;
+}
+
+.top-section h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 19px;
+
+  font-weight: 600;
+
+  letter-spacing: -0.4px;
+}
+
+/* =========================
+   BACK BUTTON
+   ========================= */
+
+.back-button {
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 47px;
+  height: 42px;
+
+  padding: 0;
+
+  border: 1px solid #252829;
+  border-radius: 13px;
+
+  background: #111314;
+
+  color: #dddddd;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    transform 0.2s;
+}
+
+.back-button:hover {
+  background: #191b1c;
+
+  border-color: #ff6500;
+
+  transform: translateX(-2px);
+}
+
+.back-button:active {
+  transform: scale(0.96);
+}
+
+.back-button span {
+  color: #ff6500;
+
+  font-size: 21px;
+
+  line-height: 1;
+}
+
+/* =========================
+   SECTION LABEL
+   ========================= */
+
+.section-label {
+  margin-bottom: 9px;
+
+  color: #dddddd;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+/* =========================
+   SELECTED BANK
+   ========================= */
+
+.bank-section {
+  position: absolute;
+
+  top: 96px;
+
+  left: 60px;
+
+  width: 282px;
+}
+
+.selected-bank-card {
+  width: 282px;
+  height: 65px;
+
+  box-sizing: border-box;
+
+  padding: 0 12px;
+
+  border: 1px solid #ff6500;
+
+  border-radius: 15px;
+
+  background: #151718;
+
+  display: flex;
+
+  align-items: center;
+
+  box-shadow: 0 6px 18px rgba(255, 80, 0, 0.1);
+}
+
+/* BANK LOGO */
+
+.bank-logo {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  border-radius: 11px;
+
+  background: linear-gradient(135deg, #ff4500, #ffb900);
+
+  color: #ffffff;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 9px;
+
+  font-weight: 700;
+}
+
+/* BANK INFO */
+
+.bank-info {
+  margin-left: 11px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  min-width: 0;
+
+  flex: 1;
+}
+
+.bank-name {
+  color: #ffffff;
+
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+.bank-detail {
+  color: #666869;
+
+  font-size: 8px;
+}
+
+/* CHECK */
+
+.check-icon {
+  width: 22px;
+  height: 22px;
+
+  border-radius: 50%;
+
+  background: #ff6500;
+
+  color: #ffffff;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 12px;
+}
+
+/* =========================
+   ACCOUNT DETAILS
+   ========================= */
+
+.account-section {
+  position: absolute;
+
+  top: 188px;
+
+  left: 60px;
+
+  width: 282px;
+}
+
+.input-group {
+  margin-bottom: 12px;
+}
+
+.input-group label {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #777979;
+
+  font-size: 9px;
+}
+
+.input-group input {
+  width: 282px;
+  height: 45px;
+
+  box-sizing: border-box;
+
+  padding: 0 13px;
+
+  border: 1px solid #252829;
+
+  border-radius: 12px;
+
+  outline: none;
+
+  background: #111314;
+
+  color: #ffffff;
+
+  font-size: 10px;
+
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.input-group input::placeholder {
+  color: #555758;
+}
+
+.input-group input:focus {
+  border-color: #ff6500;
+
+  box-shadow: 0 0 0 2px rgba(255, 101, 0, 0.08);
+}
+
+/* =========================
+   AMOUNT
+   ========================= */
+
+.amount-section {
+  position: absolute;
+
+  top: 345px;
+
+  left: 60px;
+
+  width: 282px;
+}
+
+.amount-card {
+  width: 282px;
+  height: 60px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #252829;
+
+  border-radius: 14px;
+
+  background: #111314;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 0 14px;
+
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.amount-card:focus-within {
+  border-color: #ff6500;
+
+  box-shadow: 0 0 0 2px rgba(255, 101, 0, 0.08);
+}
+
+.currency-symbol {
+  color: #ff6500;
+
+  font-size: 22px;
+
+  font-weight: 600;
+
+  margin-right: 8px;
+}
+
+.amount-card input {
+  width: 100%;
+
+  height: 100%;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-size: 22px;
+}
+
+.amount-card input::placeholder {
+  color: #444748;
+}
+
+/* =========================
+   SUMMARY
+   ========================= */
+
+.summary-card {
+  position: absolute;
+
+  top: 443px;
+
+  left: 60px;
+
+  width: 282px;
+
+  box-sizing: border-box;
+
+  padding: 15px;
+
+  border: 1px solid #252829;
+
+  border-radius: 14px;
+
+  background: #111314;
+}
+
+.summary-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  color: #777979;
+
+  font-size: 9px;
+}
+
+.summary-row span:last-child {
+  color: #dddddd;
+}
+
+.summary-divider {
+  width: 100%;
+
+  height: 1px;
+
+  margin: 12px 0;
+
+  background: #252829;
+}
+
+.total-row {
+  color: #ffffff;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+.total-row span:last-child {
+  color: #ff6500;
+
+  font-size: 14px;
+}
+
+/* =========================
+   CONTINUE BUTTON
+   ========================= */
+
+.continue-button {
+  position: absolute;
+
+  left: 50%;
+  bottom: 34px;
+
+  transform: translateX(-50%);
+
+  width: 282px;
+  height: 50px;
+
+  border: none;
+  border-radius: 14px;
+
+  background: linear-gradient(90deg, #ff4500, #ffb900);
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  box-shadow: 0 7px 22px rgba(255, 80, 0, 0.18);
+
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s,
+    opacity 0.2s;
+}
+
+.continue-button:hover:not(:disabled) {
+  transform: translateX(-50%) translateY(-3px);
+
+  box-shadow: 0 10px 28px rgba(255, 80, 0, 0.32);
+}
+
+.continue-button:active:not(:disabled) {
+  transform: translateX(-50%) scale(0.98);
+}
+
+.continue-button:disabled {
+  background: #242627;
+
+  color: #555758;
+
+  cursor: not-allowed;
+
+  box-shadow: none;
+
+  opacity: 0.8;
+}
+
+.continue-arrow {
+  font-size: 17px;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 430px) {
+  .details-page {
+    width: 100%;
+    height: 100%;
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    border: none;
+
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .bank-section,
+  .account-section,
+  .amount-section,
+  .summary-card {
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: calc(100% - 50px);
+  }
+
+  .selected-bank-card,
+  .input-group input,
+  .amount-card,
+  .summary-card {
+    width: 100%;
+  }
+
+  .continue-button {
+    width: calc(100% - 50px);
+  }
+}

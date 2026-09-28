@@ -1,0 +1,195 @@
+<ion-content [fullscreen]="true" class="convert-content">
+  <div class="convert-page">
+    <!-- ================= HEADER ================= -->
+
+    <div class="top-section">
+      <button type="button" class="back-button" (click)="goBack()">
+        <span class="back-icon">←</span>
+        <span>Back</span>
+      </button>
+
+      <button type="button" class="history-button">⋯</button>
+    </div>
+
+    <!-- ================= TITLE ================= -->
+
+    <div class="title-section">
+      <h1>Currency Converter</h1>
+
+      <p>Convert your money instantly</p>
+    </div>
+
+    <!-- ================= FROM CURRENCY ================= -->
+
+    <div class="currency-card from-card">
+      <div class="currency-header">
+        <span class="currency-label"> From </span>
+
+        <button
+          type="button"
+          class="currency-selector"
+          (click)="toggleFromCurrency()"
+        >
+          <span class="currency-flag"> {{ getFlag(fromCurrency) }} </span>
+
+          <span> {{ fromCurrency }} </span>
+
+          <span class="arrow"> ▾ </span>
+        </button>
+      </div>
+
+      <div class="amount-row">
+        <input
+          type="number"
+          class="amount-input"
+          [(ngModel)]="amount"
+          placeholder="0.00"
+          min="0"
+        />
+
+        <span class="currency-code"> {{ fromCurrency }} </span>
+      </div>
+
+      <!-- FROM CURRENCY LIST -->
+
+      <div class="currency-list" *ngIf="showFromCurrency">
+        <button
+          type="button"
+          *ngFor="let currency of currencies"
+          class="currency-option"
+          (click)="selectFromCurrency(currency.code)"
+        >
+          <span> {{ currency.flag }} </span>
+
+          <span class="option-code"> {{ currency.code }} </span>
+
+          <span class="option-name"> {{ currency.name }} </span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ================= SWAP BUTTON ================= -->
+
+    <button type="button" class="swap-button" (click)="swapCurrencies()">
+      ⇅
+    </button>
+
+    <!-- ================= TO CURRENCY ================= -->
+
+    <div class="currency-card to-card">
+      <div class="currency-header">
+        <span class="currency-label"> To </span>
+
+        <button
+          type="button"
+          class="currency-selector"
+          (click)="toggleToCurrency()"
+        >
+          <span class="currency-flag"> {{ getFlag(toCurrency) }} </span>
+
+          <span> {{ toCurrency }} </span>
+
+          <span class="arrow"> ▾ </span>
+        </button>
+      </div>
+
+      <div class="amount-row">
+        <input
+          type="text"
+          class="amount-input"
+          [value]="convertedAmount"
+          placeholder="0.00"
+          readonly
+        />
+
+        <span class="currency-code"> {{ toCurrency }} </span>
+      </div>
+
+      <!-- TO CURRENCY LIST -->
+
+      <div class="currency-list" *ngIf="showToCurrency">
+        <button
+          type="button"
+          *ngFor="let currency of currencies"
+          class="currency-option"
+          (click)="selectToCurrency(currency.code)"
+        >
+          <span> {{ currency.flag }} </span>
+
+          <span class="option-code"> {{ currency.code }} </span>
+
+          <span class="option-name"> {{ currency.name }} </span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ================= EXCHANGE RATE ================= -->
+
+    <div class="rate-section">
+      <div class="rate-label">Exchange Rate</div>
+
+      <div class="rate-value">
+        1 {{ fromCurrency }} = {{ getRate() | number:'1.2-4' }} {{ toCurrency }}
+      </div>
+
+      <span class="rate-update"> Indicative rate </span>
+    </div>
+
+    <!-- ================= CONVERT BUTTON ================= -->
+
+    <button type="button" class="convert-button" (click)="convert()">
+      <span class="convert-icon"> ⇄ </span>
+
+      <span> Convert </span>
+
+      <span class="convert-arrow"> → </span>
+    </button>
+
+    <!-- ================= BOTTOM NAVIGATION ================= -->
+
+    <div class="bottom-nav">
+      <!-- HOME -->
+
+      <button type="button" class="nav-item" (click)="goHome()">
+        <ion-icon name="home-outline"></ion-icon>
+        <span>Home</span>
+      </button>
+
+      <!-- INBOX -->
+
+      <button type="button" class="nav-item">
+        <ion-icon name="chatbubble-outline"></ion-icon>
+        <span>Inbox</span>
+      </button>
+
+      <!-- QR SPACE -->
+
+      <div class="qr-space"></div>
+
+      <!-- CONVERT -->
+
+      <button type="button" class="nav-item active">
+        <ion-icon name="swap-horizontal-outline"></ion-icon>
+        <span>Convert</span>
+      </button>
+
+      <!-- PROFILE -->
+
+      <button type="button" class="nav-item">
+        <ion-icon name="person-outline"></ion-icon>
+        <span>Profile</span>
+      </button>
+    </div>
+
+    <!-- ================= FLOATING QR ================= -->
+
+    <button
+      type="button"
+      class="floating-qr"
+      (click)="goToQRGenerator()"
+      aria-label="QR"
+    >
+      <ion-icon name="qr-code-outline"></ion-icon>
+    </button>
+  </div>
+</ion-content>

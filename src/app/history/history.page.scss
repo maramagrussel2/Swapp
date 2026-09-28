@@ -1,0 +1,554 @@
+ion-content.history-content {
+  --background: #050607;
+}
+
+.history-page {
+  position: relative;
+
+  width: 402px;
+  height: 874px;
+
+  margin: 0 auto;
+
+  box-sizing: border-box;
+
+  background: #080a0b;
+  color: #ffffff;
+
+  border: 2px solid #303333;
+  border-radius: 34px;
+
+  overflow: hidden;
+
+  font-family: Arial, sans-serif;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.top-section {
+  position: absolute;
+
+  top: 27px;
+  left: 25px;
+  right: 25px;
+
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  z-index: 10;
+}
+
+.top-section h1 {
+  position: absolute;
+
+  left: 50%;
+  transform: translateX(-50%);
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  letter-spacing: -0.3px;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.back-button:hover {
+  color: #ff4500;
+}
+
+.back-icon {
+  font-size: 23px;
+  line-height: 1;
+}
+
+.filter-button {
+  width: 32px;
+  height: 32px;
+
+  padding: 0;
+
+  border: 1px solid #292d2e;
+  border-radius: 9px;
+
+  background: #111415;
+
+  color: #858a8b;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.filter-button:hover {
+  color: #ff4500;
+  border-color: #ff4500;
+}
+
+/* =========================
+   FILTER PILLS
+========================= */
+
+.filter-pills {
+  position: absolute;
+
+  top: 86px;
+  left: 25px;
+  right: 25px;
+
+  display: flex;
+
+  gap: 8px;
+
+  overflow-x: auto;
+
+  padding-bottom: 3px;
+
+  scrollbar-width: none;
+
+  z-index: 5;
+}
+
+.filter-pills::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-pill {
+  flex-shrink: 0;
+
+  height: 34px;
+
+  padding: 0 17px;
+
+  border: 1px solid #292d2e;
+  border-radius: 18px;
+
+  background: #111415;
+
+  color: #858a8b;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.filter-pill:hover {
+  border-color: #ff4500;
+  color: #ffffff;
+}
+
+.filter-pill.active {
+  border-color: #ff4500;
+
+  background: #ff4500;
+
+  color: #ffffff;
+
+  box-shadow: 0 4px 12px rgba(255, 69, 0, 0.15);
+}
+
+/* =========================
+   TRANSACTION GROUP
+========================= */
+
+.transaction-group {
+  position: absolute;
+
+  top: 145px;
+
+  left: 25px;
+  right: 25px;
+
+  z-index: 3;
+}
+
+.transaction-group.yesterday {
+  top: 475px;
+}
+
+.group-title {
+  margin-bottom: 8px;
+
+  color: #777c7d;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.8px;
+}
+
+/* =========================
+   TRANSACTION CARD
+========================= */
+
+.transaction-card {
+  width: 100%;
+  min-height: 65px;
+
+  margin-bottom: 7px;
+
+  padding: 10px 12px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #111415;
+
+  border: 1px solid #292d2e;
+
+  border-radius: 13px;
+
+  transition: 0.2s;
+}
+
+.transaction-card:hover {
+  border-color: #3c4142;
+
+  transform: translateY(-1px);
+}
+
+/* =========================
+   LEFT SIDE
+========================= */
+
+.transaction-left {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.transaction-info {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.transaction-detail {
+  color: #777c7d;
+
+  font-size: 9px;
+  line-height: 1;
+}
+
+.transaction-name {
+  max-width: 155px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.transaction-right {
+  flex-shrink: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  gap: 5px;
+}
+
+.transaction-amount {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.transaction-amount.sent {
+  color: #ff5c5c;
+}
+
+.transaction-amount.received {
+  color: #49c56b;
+}
+
+.transaction-time {
+  color: #777c7d;
+
+  font-size: 9px;
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty-state {
+  position: absolute;
+
+  top: 280px;
+
+  left: 25px;
+  right: 25px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+.empty-icon {
+  width: 54px;
+  height: 54px;
+
+  margin-bottom: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #111415;
+
+  border: 1px solid #292d2e;
+
+  color: #ff4500;
+
+  font-size: 24px;
+}
+
+.empty-title {
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.empty-text {
+  margin-top: 5px;
+
+  color: #777c7d;
+
+  font-size: 10px;
+}
+
+/* =========================
+   BOTTOM NAV
+========================= */
+
+.bottom-nav {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 64px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  background: #0d0f10;
+
+  border-top: 1px solid #252829;
+
+  z-index: 12;
+}
+
+.nav-item {
+  position: relative;
+
+  width: 20%;
+  height: 64px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #777c7d;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 9px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.nav-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.nav-item:hover {
+  color: #ff4500;
+}
+
+/* =========================
+   QR CENTER
+========================= */
+
+.qr-nav {
+  padding-bottom: 7px;
+}
+
+.qr-label {
+  color: #777c7d;
+
+  font-size: 9px;
+}
+
+.qr-hidden-icon {
+  width: 20px;
+  height: 18px;
+
+  visibility: hidden;
+}
+
+/* =========================
+   FLOATING QR
+========================= */
+
+.floating-qr {
+  position: absolute;
+
+  left: 50%;
+  bottom: 35px;
+
+  transform: translateX(-50%);
+
+  width: 58px;
+  height: 58px;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+  border: 4px solid #080a0b;
+
+  border-radius: 50%;
+
+  background: #ff4500;
+
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 24px;
+
+  cursor: pointer;
+
+  z-index: 20;
+
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.45);
+
+  transition:
+    background 0.2s,
+    box-shadow 0.2s;
+}
+
+.floating-qr:hover {
+  background: #ff5010;
+
+  box-shadow: 0 7px 22px rgba(255, 69, 0, 0.35);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 430px) {
+  .history-page {
+    width: 100%;
+    height: 100%;
+
+    min-height: 0;
+
+    margin: 0;
+
+    border: none;
+    border-radius: 0;
+  }
+}

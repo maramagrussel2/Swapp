@@ -1,0 +1,153 @@
+<ion-content [fullscreen]="true" class="qr-content">
+  <div class="qr-page">
+    <!-- TOP BAR -->
+    <div class="top-section">
+      <button type="button" class="back-button" (click)="goBack()">
+        <span class="back-icon">←</span>
+        <span>Back</span>
+      </button>
+
+      <button type="button" class="more-button">⋯</button>
+    </div>
+
+    <!-- TITLE -->
+    <div class="title-section">
+      <h1>Generate QR</h1>
+
+      <p>Receive payments easily</p>
+    </div>
+
+    <!-- QR CARD -->
+    <div class="qr-card">
+      <div class="qr-card-header">
+        <span class="qr-card-title"> Your QR Code </span>
+
+        <span class="status-dot" [class.generated]="qrCodeUrl"></span>
+      </div>
+
+      <div class="qr-display">
+        <!-- EMPTY STATE -->
+
+        <div class="qr-empty" *ngIf="!qrCodeUrl">
+          <div class="qr-placeholder">
+            <div class="corner top-left"></div>
+
+            <div class="corner top-right"></div>
+
+            <div class="corner bottom-left"></div>
+
+            <div class="placeholder-center">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+
+          <span class="empty-title"> Scan to Pay </span>
+
+          <span class="empty-subtitle"> Your QR will appear here </span>
+        </div>
+
+        <!-- GENERATED QR -->
+
+        <div class="qr-generated" *ngIf="qrCodeUrl">
+          <img [src]="qrCodeUrl" alt="Generated QR Code" />
+        </div>
+      </div>
+
+      <!-- GENERATED MESSAGE -->
+
+      <div class="generated-message" *ngIf="qrCodeUrl">
+        QR code generated successfully
+      </div>
+    </div>
+
+    <!-- QR INFORMATION -->
+
+    <div class="qr-info">
+      <span class="info-icon">▦</span>
+
+      <div class="info-text">
+        <span class="info-title"> Your personal QR code </span>
+
+        <span class="info-description">
+          Let others scan this code to send you payments
+        </span>
+      </div>
+    </div>
+
+    <!-- GENERATE BUTTON -->
+
+    <button type="button" class="generate-button" (click)="generateQR()">
+      <span class="generate-icon"> ▦ </span>
+
+      <span> {{ qrCodeUrl ? 'Generate Again' : 'Generate QR' }} </span>
+
+      <span class="generate-arrow"> → </span>
+    </button>
+
+    <!-- SHARE -->
+
+    <button
+      type="button"
+      class="share-button"
+      *ngIf="qrCodeUrl"
+      (click)="shareQR()"
+    >
+      <span>↗</span>
+
+      <span>Share QR Code</span>
+    </button>
+
+    <!-- FLOATING QR BUTTON -->
+
+    <button type="button" class="floating-qr" aria-label="QR">
+      <span>▦</span>
+    </button>
+
+    <!-- BOTTOM NAVIGATION -->
+
+    <div class="bottom-nav">
+      <!-- HOME -->
+
+      <button type="button" class="nav-item" (click)="goHome()">
+        <span class="nav-icon"> ⌂ </span>
+
+        <span> Home </span>
+      </button>
+
+      <!-- INBOX -->
+
+      <button type="button" class="nav-item">
+        <span class="nav-icon"> □ </span>
+
+        <span> Inbox </span>
+      </button>
+
+      <!-- QR -->
+
+      <button type="button" class="nav-item qr-nav active">
+        <span class="qr-hidden-icon"></span>
+
+        <span class="qr-label"> QR </span>
+      </button>
+
+      <!-- CONVERT -->
+
+      <button type="button" class="nav-item">
+        <span class="nav-icon"> ⇄ </span>
+
+        <span> Convert </span>
+      </button>
+
+      <!-- PROFILE -->
+
+      <button type="button" class="nav-item">
+        <span class="nav-icon"> ♙ </span>
+
+        <span> Profile </span>
+      </button>
+    </div>
+  </div>
+</ion-content>

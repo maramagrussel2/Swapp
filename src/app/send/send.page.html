@@ -1,0 +1,342 @@
+<ion-content class="send-content">
+  <div class="send-page">
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <div class="top-section">
+      <button class="back-button" type="button" (click)="goBack()">
+        <span>←</span>
+        <div class="header-pill"></div>
+      </button>
+
+      <button class="cancel-button" type="button" (click)="goBack()">
+        Cancel
+      </button>
+    </div>
+
+    <!-- =========================
+         RECIPIENT
+    ========================== -->
+
+    <div class="recipient-heading">Recipient</div>
+
+    <div class="main-input">
+      <span class="search-icon"> ⌕ </span>
+
+      <span class="search-text">
+        {{ selectedRecipient || 'Search recipient' }}
+      </span>
+    </div>
+
+    <!-- =========================
+         MOBILE NUMBER
+    ========================== -->
+
+    <div class="mobile-number-label">Mobile Number</div>
+
+    <div class="mobile-number-box">
+      <div class="mobile-country">
+        <span class="country-flag"> 🇵🇭 </span>
+
+        <span class="country-code"> +63 </span>
+
+        <span class="dropdown-arrow"> ▾ </span>
+      </div>
+
+      <input
+        #mobileNumberInput
+        type="tel"
+        inputmode="numeric"
+        maxlength="10"
+        [(ngModel)]="recipientNumber"
+        placeholder="Mobile number"
+        aria-label="Recipient mobile number"
+      />
+    </div>
+
+    <div class="mobile-number-hint">Enter the recipient's mobile number</div>
+
+    <!-- =========================
+         AMOUNT
+    ========================== -->
+
+    <div class="amount-label">Amount</div>
+
+    <div class="amount-box">
+      <!-- Currency Selector -->
+
+      <button
+        type="button"
+        class="currency-selector"
+        (click)="toggleCurrencyList()"
+      >
+        <span class="currency-flag"> {{ selectedCurrency.flag }} </span>
+
+        <span class="currency-code"> {{ selectedCurrency.code }} </span>
+
+        <span class="dropdown-arrow"> ▾ </span>
+      </button>
+
+      <!-- Amount Input -->
+
+      <input
+        #amountInput
+        type="number"
+        [(ngModel)]="amount"
+        placeholder="0.00"
+        aria-label="Amount"
+        (input)="checkAmount()"
+      />
+    </div>
+
+    <!-- =========================
+         CURRENCY LIST
+    ========================== -->
+
+    <div class="currency-list" *ngIf="showCurrencyList">
+      <button
+        type="button"
+        class="currency-option"
+        *ngFor="let currency of currencies"
+        (click)="selectCurrency(currency)"
+      >
+        <span class="option-flag"> {{ currency.flag }} </span>
+
+        <span class="option-name"> {{ currency.name }} </span>
+
+        <span class="option-code"> {{ currency.code }} </span>
+      </button>
+    </div>
+
+    <!-- =========================
+         AVAILABLE BALANCE
+    ========================== -->
+
+    <div class="available-balance">
+      Available balance: {{ selectedCurrency.symbol }}12,345.67
+    </div>
+
+    <!-- =========================
+         RECENT RECIPIENTS
+    ========================== -->
+
+    <div class="recipient-label">Recent recipients</div>
+
+    <div class="recent-row">
+      <!-- MARIA -->
+
+      <div class="recent-item" (click)="selectRecipient('Maria Santos')">
+        <div
+          class="circle"
+          [class.selected-circle]="
+            selectedRecipient === 'Maria Santos'
+          "
+        >
+          M
+        </div>
+
+        <span> Maria </span>
+      </div>
+
+      <!-- JUAN -->
+
+      <div class="recent-item" (click)="selectRecipient('Juan Cruz')">
+        <div
+          class="circle"
+          [class.selected-circle]="
+            selectedRecipient === 'Juan Cruz'
+          "
+        >
+          J
+        </div>
+
+        <span> Juan </span>
+      </div>
+
+      <!-- ALEX -->
+
+      <div class="recent-item" (click)="selectRecipient('Alex Reyes')">
+        <div
+          class="circle"
+          [class.selected-circle]="
+            selectedRecipient === 'Alex Reyes'
+          "
+        >
+          A
+        </div>
+
+        <span> Alex </span>
+      </div>
+
+      <!-- KYLE -->
+
+      <div class="recent-item" (click)="selectRecipient('Kyle')">
+        <div
+          class="circle"
+          [class.selected-circle]="
+            selectedRecipient === 'Kyle'
+          "
+        >
+          K
+        </div>
+
+        <span> Kyle </span>
+      </div>
+
+      <!-- SARAH -->
+
+      <div class="recent-item" (click)="selectRecipient('Sarah')">
+        <div
+          class="circle"
+          [class.selected-circle]="
+            selectedRecipient === 'Sarah'
+          "
+        >
+          S
+        </div>
+
+        <span> Sarah </span>
+      </div>
+    </div>
+
+    <!-- =========================
+         SEE ALL
+    ========================== -->
+
+    <button type="button" class="see-all-button">See All</button>
+
+    <!-- =========================
+         RECIPIENT LIST
+    ========================== -->
+
+    <div class="recipient-list">
+      <!-- =====================
+           MARIA SANTOS
+      ====================== -->
+
+      <div
+        class="recipient-row"
+        [class.selected-row]="
+          selectedRecipient === 'Maria Santos'
+        "
+        (click)="selectRecipient('Maria Santos')"
+      >
+        <div class="list-circle">M</div>
+
+        <div class="recipient-info">
+          <span class="recipient-name"> Maria Santos </span>
+
+          <span class="recipient-detail"> 09171234567 </span>
+        </div>
+
+        <span class="list-arrow"> › </span>
+      </div>
+
+      <!-- =====================
+           JUAN CRUZ
+      ====================== -->
+
+      <div
+        class="recipient-row"
+        [class.selected-row]="
+          selectedRecipient === 'Juan Cruz'
+        "
+        (click)="selectRecipient('Juan Cruz')"
+      >
+        <div class="list-circle">J</div>
+
+        <div class="recipient-info">
+          <span class="recipient-name"> Juan Cruz </span>
+
+          <span class="recipient-detail"> 09187654321 </span>
+        </div>
+
+        <span class="list-arrow"> › </span>
+      </div>
+
+      <!-- =====================
+           ALEX REYES
+      ====================== -->
+
+      <div
+        class="recipient-row"
+        [class.selected-row]="
+          selectedRecipient === 'Alex Reyes'
+        "
+        (click)="selectRecipient('Alex Reyes')"
+      >
+        <div class="list-circle">A</div>
+
+        <div class="recipient-info">
+          <span class="recipient-name"> Alex Reyes </span>
+
+          <span class="recipient-detail"> 09054321987 </span>
+        </div>
+
+        <span class="list-arrow"> › </span>
+      </div>
+
+      <!-- =====================
+           KYLE
+      ====================== -->
+
+      <div
+        class="recipient-row"
+        [class.selected-row]="
+          selectedRecipient === 'Kyle'
+        "
+        (click)="selectRecipient('Kyle')"
+      >
+        <div class="list-circle">K</div>
+
+        <div class="recipient-info">
+          <span class="recipient-name"> Kyle </span>
+
+          <span class="recipient-detail"> 09276543210 </span>
+        </div>
+
+        <span class="list-arrow"> › </span>
+      </div>
+
+      <!-- =====================
+           SARAH
+      ====================== -->
+
+      <div
+        class="recipient-row"
+        [class.selected-row]="
+          selectedRecipient === 'Sarah'
+        "
+        (click)="selectRecipient('Sarah')"
+      >
+        <div class="list-circle">S</div>
+
+        <div class="recipient-info">
+          <span class="recipient-name"> Sarah </span>
+
+          <span class="recipient-detail"> 09981234567 </span>
+        </div>
+
+        <span class="list-arrow"> › </span>
+      </div>
+    </div>
+
+    <!-- =========================
+         CONTINUE
+    ========================== -->
+
+    <button
+      type="button"
+      class="bottom-button"
+      [disabled]="
+        !selectedRecipient ||
+        !recipientNumber ||
+        !amount
+      "
+      (click)="sendMoney()"
+    >
+      <span> Continue </span>
+    </button>
+  </div>
+</ion-content>

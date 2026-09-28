@@ -1,0 +1,813 @@
+/* =========================================
+   SWAPP QR GENERATOR
+========================================= */
+
+ion-content.qr-content {
+  --background: #050607;
+}
+
+/* =========================================
+   PHONE FRAME
+========================================= */
+
+.qr-page {
+  position: relative;
+
+  width: 402px;
+  height: 874px;
+
+  margin: 0 auto;
+
+  box-sizing: border-box;
+
+  background: #080a0b;
+
+  color: #ffffff;
+
+  border: 2px solid #303333;
+
+  border-radius: 34px;
+
+  overflow: hidden;
+
+  font-family: Arial, sans-serif;
+}
+
+/* =========================================
+   TOP BAR
+========================================= */
+
+.top-section {
+  position: absolute;
+
+  top: 27px;
+  left: 25px;
+  right: 25px;
+
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  z-index: 30;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.back-button:hover {
+  color: #ff4500;
+}
+
+.back-icon {
+  font-size: 25px;
+
+  line-height: 20px;
+}
+
+.more-button {
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #858a8b;
+
+  font-size: 24px;
+
+  line-height: 20px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.more-button:hover {
+  color: #ff4500;
+}
+
+/* =========================================
+   TITLE
+========================================= */
+
+.title-section {
+  position: absolute;
+
+  top: 88px;
+
+  left: 25px;
+  right: 25px;
+
+  text-align: center;
+
+  z-index: 5;
+}
+
+.title-section h1 {
+  margin: 0;
+  padding: 0;
+
+  color: #ffffff;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 27px;
+
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.5px;
+}
+
+.title-section p {
+  margin: 7px 0 0;
+  padding: 0;
+
+  color: #858a8b;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 13px;
+
+  line-height: 1.3;
+}
+
+/* =========================================
+   QR CARD
+========================================= */
+
+.qr-card {
+  position: absolute;
+
+  top: 168px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 340px;
+
+  padding: 15px;
+
+  box-sizing: border-box;
+
+  background: #111415;
+
+  border: 1px solid #292d2e;
+
+  border-radius: 19px;
+
+  z-index: 4;
+}
+
+.qr-card-header {
+  height: 22px;
+
+  margin-bottom: 11px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.qr-card-title {
+  color: #ffffff;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #3c4142;
+
+  transition: 0.2s;
+}
+
+.status-dot.generated {
+  background: #ff4500;
+
+  box-shadow: 0 0 8px rgba(255, 69, 0, 0.55);
+}
+
+/* =========================================
+   QR DISPLAY
+========================================= */
+
+.qr-display {
+  width: 100%;
+  height: 205px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+
+  border-radius: 13px;
+
+  overflow: hidden;
+}
+
+/* =========================================
+   EMPTY QR
+========================================= */
+
+.qr-empty {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-placeholder {
+  position: relative;
+
+  width: 112px;
+  height: 112px;
+
+  box-sizing: border-box;
+
+  border: 2px dashed #c5c8c9;
+
+  border-radius: 8px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================================
+   QR CORNERS
+========================================= */
+
+.corner {
+  position: absolute;
+
+  width: 25px;
+  height: 25px;
+
+  box-sizing: border-box;
+
+  border: 4px solid #555b5c;
+}
+
+.corner.top-left {
+  top: 10px;
+  left: 10px;
+
+  border-right: none;
+  border-bottom: none;
+}
+
+.corner.top-right {
+  top: 10px;
+  right: 10px;
+
+  border-left: none;
+  border-bottom: none;
+}
+
+.corner.bottom-left {
+  bottom: 10px;
+  left: 10px;
+
+  border-right: none;
+  border-top: none;
+}
+
+/* =========================================
+   QR CENTER
+========================================= */
+
+.placeholder-center {
+  width: 32px;
+  height: 32px;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 4px;
+}
+
+.placeholder-center span {
+  display: block;
+
+  background: #777d7e;
+
+  border-radius: 2px;
+}
+
+.placeholder-center span:nth-child(2),
+.placeholder-center span:nth-child(3) {
+  background: transparent;
+
+  border: 2px solid #777d7e;
+}
+
+/* =========================================
+   QR EMPTY TEXT
+========================================= */
+
+.empty-title {
+  margin-top: 9px;
+
+  color: #4f5455;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.empty-subtitle {
+  margin-top: 3px;
+
+  color: #999d9e;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 9px;
+}
+
+/* =========================================
+   GENERATED QR
+========================================= */
+
+.qr-generated {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-generated img {
+  width: 180px;
+  height: 180px;
+
+  object-fit: contain;
+}
+
+/* =========================================
+   GENERATED MESSAGE
+========================================= */
+
+.generated-message {
+  margin-top: 8px;
+
+  color: #ff4500;
+
+  text-align: center;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 600;
+}
+
+/* =========================================
+   QR INFORMATION CARD
+========================================= */
+
+.qr-info {
+  position: absolute;
+
+  top: 505px;
+
+  left: 25px;
+  right: 25px;
+
+  min-height: 58px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 10px 13px;
+
+  background: #111415;
+
+  border: 1px solid #292d2e;
+
+  border-radius: 13px;
+
+  z-index: 3;
+}
+
+.info-icon {
+  width: 30px;
+  height: 30px;
+
+  margin-right: 10px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  background: rgba(255, 69, 0, 0.12);
+
+  color: #ff4500;
+
+  font-size: 16px;
+}
+
+.info-text {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+
+  min-width: 0;
+}
+
+.info-title {
+  color: #ffffff;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+.info-description {
+  color: #777c7d;
+
+  font-size: 9px;
+
+  line-height: 1.3;
+}
+
+/* =========================================
+   GENERATE BUTTON
+========================================= */
+
+.generate-button {
+  position: absolute;
+
+  top: 585px;
+
+  left: 25px;
+
+  width: 352px;
+  height: 53px;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+  border: none;
+
+  border-radius: 13px;
+
+  background: linear-gradient(135deg, #ff4500, #d93800);
+
+  color: #ffffff;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: 0 7px 20px rgba(255, 69, 0, 0.18);
+
+  transition: 0.2s;
+
+  z-index: 6;
+}
+
+.generate-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 25px rgba(255, 69, 0, 0.3);
+}
+
+.generate-icon {
+  font-size: 18px;
+
+  line-height: 1;
+}
+
+.generate-arrow {
+  position: absolute;
+
+  right: 16px;
+
+  font-size: 18px;
+}
+
+/* =========================================
+   SHARE BUTTON
+========================================= */
+
+.share-button {
+  position: absolute;
+
+  top: 650px;
+
+  left: 25px;
+
+  width: 352px;
+  height: 43px;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+  border: 1px solid #303435;
+
+  border-radius: 12px;
+
+  background: #111415;
+
+  color: #ffffff;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+
+  z-index: 6;
+}
+
+.share-button:hover {
+  border-color: #ff4500;
+
+  color: #ff4500;
+}
+
+.share-button span:first-child {
+  font-size: 15px;
+}
+
+/* =========================================
+   FLOATING QR BUTTON
+========================================= */
+
+.floating-qr {
+  position: absolute;
+
+  left: 50%;
+
+  /*
+    Fixed relative to the phone frame.
+    It stays in the QR navigation position.
+  */
+  bottom: 35px;
+
+  transform: translateX(-50%);
+
+  width: 58px;
+  height: 58px;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+  border: 4px solid #080a0b;
+
+  border-radius: 50%;
+
+  background: #ff4500;
+
+  color: #ffffff;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 24px;
+
+  cursor: pointer;
+
+  z-index: 20;
+
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.45);
+
+  transition:
+    box-shadow 0.2s,
+    background 0.2s;
+}
+
+.floating-qr:hover {
+  background: #ff5010;
+
+  box-shadow: 0 7px 22px rgba(255, 69, 0, 0.35);
+}
+
+/* =========================================
+   BOTTOM NAVIGATION
+========================================= */
+
+.bottom-nav {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 64px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-around;
+
+  background: #0d0f10;
+
+  border-top: 1px solid #252829;
+
+  z-index: 12;
+}
+
+.nav-item {
+  position: relative;
+
+  width: 20%;
+  height: 64px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #777c7d;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 9px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.nav-icon {
+  font-size: 18px;
+
+  line-height: 1;
+}
+
+.nav-item:hover {
+  color: #ff4500;
+}
+
+/* =========================================
+   ACTIVE QR NAVIGATION
+========================================= */
+
+.qr-nav {
+  padding-bottom: 7px;
+
+  color: #ff4500;
+}
+
+.qr-label {
+  color: #ff4500;
+
+  font-weight: 600;
+}
+
+/*
+   Empty space where the normal QR icon would be.
+   The floating QR button occupies this position.
+*/
+
+.qr-hidden-icon {
+  width: 20px;
+  height: 18px;
+
+  visibility: hidden;
+}
+
+/* Small active indicator */
+
+.qr-nav::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: 5px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: #ff4500;
+
+  box-shadow: 0 0 7px rgba(255, 69, 0, 0.6);
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 430px) {
+  .qr-page {
+    width: 100%;
+    height: 100%;
+
+    min-height: 0;
+
+    margin: 0;
+
+    border: none;
+
+    border-radius: 0;
+  }
+}

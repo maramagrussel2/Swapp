@@ -1,0 +1,64 @@
+<ion-content class="signup-content">
+  <div class="signup-frame">
+    <div class="signup-wrapper">
+      <div class="header-text">
+        <h1 class="main-title">Create Account</h1>
+        <p class="sub-title">Sign up to get started</p>
+      </div>
+
+      <form (ngSubmit)="onSignup()" #signupForm="ngForm" class="form-container">
+        <!-- Full Name Input -->
+        <div class="input-group">
+          <label class="input-label">Full Name</label>
+          <input
+            type="text"
+            name="fullName"
+            [(ngModel)]="signupData.fullName"
+            placeholder="John Doe"
+            required
+            class="custom-input"
+          />
+        </div>
+
+        <!-- Email Input -->
+        <div class="input-group">
+          <label class="input-label">Email Address</label>
+          <input
+            type="email"
+            name="email"
+            [(ngModel)]="signupData.email"
+            placeholder="name@example.com"
+            required
+            class="custom-input"
+          />
+        </div>
+
+        <!-- Password Input -->
+        <div class="input-group">
+          <label class="input-label">Password</label>
+          <input
+            type="password"
+            name="password"
+            [(ngModel)]="signupData.password"
+            placeholder="••••••••"
+            required
+            class="custom-input"
+          />
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" [disabled]="!signupForm.valid" class="btn-orange">
+          Sign Up
+        </button>
+      </form>
+
+      <!-- Footer Link -->
+      <div class="footer-text">
+        <p>
+          Already have an account?
+          <span (click)="goToLogin()" class="link-text">Log In</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</ion-content>

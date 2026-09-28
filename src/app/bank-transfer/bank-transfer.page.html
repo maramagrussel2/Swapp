@@ -1,0 +1,208 @@
+<ion-content class="bank-content">
+  <div class="bank-page">
+    <!-- HEADER -->
+    <div class="top-section">
+      <button type="button" class="back-button" (click)="goBack()">
+        <span>←</span>
+      </button>
+
+      <h1>Bank Transfer</h1>
+    </div>
+
+    <!-- SEARCH BANK -->
+    <div class="search-box">
+      <span class="search-icon">⌕</span>
+
+      <input type="text" [(ngModel)]="searchTerm" placeholder="Search bank" />
+    </div>
+
+    <!-- SAVED BANKS -->
+    <div class="section-label saved-label">Saved Banks</div>
+
+    <button
+      type="button"
+      class="saved-bank"
+      [class.selected-bank]="selectedBank === 'bdo-saved'"
+      (click)="selectBank('bdo-saved')"
+    >
+      <div class="bank-logo bdo-logo">BDO</div>
+
+      <div class="bank-info">
+        <span class="bank-name"> BDO Unibank, Inc. </span>
+
+        <span class="bank-detail"> •••• 1234 </span>
+      </div>
+
+      <span class="bank-arrow"> › </span>
+    </button>
+
+    <!-- ALL BANKS -->
+    <div class="section-label all-label">All Banks</div>
+
+    <div class="bank-list">
+      <!-- BDO -->
+      <button
+        type="button"
+        class="bank-item"
+        *ngIf="matchesSearch('BDO Unibank, Inc.')"
+        [class.selected-bank]="selectedBank === 'bdo'"
+        (click)="selectBank('bdo')"
+      >
+        <div class="bank-logo bdo-logo">BDO</div>
+
+        <div class="bank-info">
+          <span class="bank-name"> BDO Unibank, Inc. </span>
+
+          <span class="bank-detail"> Transfer fee: ₱0.00 </span>
+        </div>
+
+        <span class="bank-arrow"> › </span>
+      </button>
+
+      <!-- BPI -->
+      <button
+        type="button"
+        class="bank-item"
+        *ngIf="matchesSearch('Bank of the Philippine Islands')"
+        [class.selected-bank]="selectedBank === 'bpi'"
+        (click)="selectBank('bpi')"
+      >
+        <div class="bank-logo bpi-logo">BPI</div>
+
+        <div class="bank-info">
+          <span class="bank-name"> Bank of the Philippine Islands </span>
+
+          <span class="bank-detail"> Transfer fee: ₱0.00 </span>
+        </div>
+
+        <span class="bank-arrow"> › </span>
+      </button>
+
+      <!-- METROBANK -->
+      <button
+        type="button"
+        class="bank-item"
+        *ngIf="matchesSearch('Metrobank')"
+        [class.selected-bank]="selectedBank === 'metrobank'"
+        (click)="selectBank('metrobank')"
+      >
+        <div class="bank-logo metrobank-logo">M</div>
+
+        <div class="bank-info">
+          <span class="bank-name"> Metrobank </span>
+
+          <span class="bank-detail"> Transfer fee: ₱0.00 </span>
+        </div>
+
+        <span class="bank-arrow"> › </span>
+      </button>
+
+      <!-- UNIONBANK -->
+      <button
+        type="button"
+        class="bank-item"
+        *ngIf="matchesSearch('UnionBank of the Philippines')"
+        [class.selected-bank]="selectedBank === 'unionbank'"
+        (click)="selectBank('unionbank')"
+      >
+        <div class="bank-logo unionbank-logo">UB</div>
+
+        <div class="bank-info">
+          <span class="bank-name"> UnionBank of the Philippines </span>
+
+          <span class="bank-detail"> Transfer fee: Instant </span>
+        </div>
+
+        <span class="bank-arrow"> › </span>
+      </button>
+
+      <!-- LANDBANK -->
+      <button
+        type="button"
+        class="bank-item"
+        *ngIf="matchesSearch('Land Bank of the Philippines')"
+        [class.selected-bank]="selectedBank === 'landbank'"
+        (click)="selectBank('landbank')"
+      >
+        <div class="bank-logo landbank-logo">LB</div>
+
+        <div class="bank-info">
+          <span class="bank-name"> Land Bank of the Philippines </span>
+
+          <span class="bank-detail"> Transfer fee: ₱0.00 </span>
+        </div>
+
+        <span class="bank-arrow"> › </span>
+      </button>
+
+      <!-- CHINABANK -->
+      <button
+        type="button"
+        class="bank-item"
+        *ngIf="matchesSearch('Chinabank')"
+        [class.selected-bank]="selectedBank === 'chinabank'"
+        (click)="selectBank('chinabank')"
+      >
+        <div class="bank-logo china-logo">C</div>
+
+        <div class="bank-info">
+          <span class="bank-name"> Chinabank </span>
+
+          <span class="bank-detail"> Transfer fee: ₱0.00 </span>
+        </div>
+
+        <span class="bank-arrow"> › </span>
+      </button>
+
+      <!-- EASTWEST -->
+      <button
+        type="button"
+        class="bank-item"
+        *ngIf="matchesSearch('EastWest Bank')"
+        [class.selected-bank]="selectedBank === 'eastwest'"
+        (click)="selectBank('eastwest')"
+      >
+        <div class="bank-logo eastwest-logo">EW</div>
+
+        <div class="bank-info">
+          <span class="bank-name"> EastWest Bank </span>
+
+          <span class="bank-detail"> Transfer fee: ₱0.00 </span>
+        </div>
+
+        <span class="bank-arrow"> › </span>
+      </button>
+
+      <!-- PNB -->
+      <button
+        type="button"
+        class="bank-item"
+        *ngIf="matchesSearch('Philippine National Bank')"
+        [class.selected-bank]="selectedBank === 'pnb'"
+        (click)="selectBank('pnb')"
+      >
+        <div class="bank-logo pnb-logo">PNB</div>
+
+        <div class="bank-info">
+          <span class="bank-name"> Philippine National Bank </span>
+
+          <span class="bank-detail"> Transfer fee: ₱0.00 </span>
+        </div>
+
+        <span class="bank-arrow"> › </span>
+      </button>
+    </div>
+
+    <!-- SELECT BANK -->
+    <button
+      type="button"
+      class="select-bank-button"
+      [disabled]="!selectedBank"
+      (click)="continueBank()"
+    >
+      <span> Select Bank </span>
+
+      <span class="button-arrow"> → </span>
+    </button>
+  </div>
+</ion-content>

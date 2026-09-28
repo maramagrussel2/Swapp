@@ -1,0 +1,564 @@
+ion-content {
+  --background: #050607;
+}
+
+.payment-content {
+  --background: #050607;
+}
+
+/* =========================
+   MAIN PAGE
+   ========================= */
+
+.payment-page {
+  position: relative;
+
+  width: 402px;
+  height: 874px;
+
+  margin: 0 auto;
+
+  box-sizing: border-box;
+
+  background: #080a0b;
+  color: #ffffff;
+
+  border: 2px solid #303333;
+  border-radius: 34px;
+
+  overflow: hidden;
+
+  font-family: Arial, sans-serif;
+}
+
+/* =========================
+   HEADER
+   ========================= */
+
+.top-section {
+  position: absolute;
+
+  top: 27px;
+  left: 22px;
+  right: 22px;
+
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  z-index: 20;
+}
+
+.back-button {
+  width: 47px;
+  height: 42px;
+
+  padding: 0;
+
+  border: 1px solid #252829;
+  border-radius: 13px;
+
+  background: #111314;
+
+  color: #dddddd;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    transform 0.2s;
+}
+
+.back-button:hover {
+  background: #191b1c;
+
+  border-color: #ff6500;
+
+  transform: translateX(-2px);
+}
+
+.back-button:active {
+  transform: scale(0.96);
+}
+
+.back-button span {
+  color: #ff6500;
+
+  font-size: 21px;
+
+  line-height: 1;
+}
+
+.cancel-button {
+  height: 42px;
+
+  padding: 0 15px;
+
+  border: 1px solid #252829;
+
+  border-radius: 13px;
+
+  background: #111314;
+
+  color: #777777;
+
+  font-size: 10px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s;
+}
+
+.cancel-button:hover {
+  background: #191b1c;
+
+  color: #ff6500;
+
+  border-color: #ff6500;
+}
+
+/* =========================
+   TITLE
+   ========================= */
+
+.title-section {
+  position: absolute;
+
+  top: 99px;
+  left: 60px;
+
+  right: 60px;
+}
+
+.title-section h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 21px;
+
+  font-weight: 600;
+
+  letter-spacing: -0.4px;
+}
+
+.title-section p {
+  margin: 7px 0 0;
+
+  color: #666869;
+
+  font-size: 9px;
+
+  line-height: 1.4;
+}
+
+/* =========================
+   TRANSFER SUMMARY
+   ========================= */
+
+.summary-label {
+  position: absolute;
+
+  top: 153px;
+  left: 60px;
+
+  color: #dddddd;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+.summary-card {
+  position: absolute;
+
+  top: 177px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 282px;
+  height: 108px;
+
+  box-sizing: border-box;
+
+  padding: 15px 16px;
+
+  background: #111314;
+
+  border: 1px solid #252829;
+
+  border-radius: 16px;
+}
+
+.summary-row {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.summary-info {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  min-width: 0;
+}
+
+.summary-title {
+  color: #555758;
+
+  font-size: 8px;
+}
+
+.summary-value {
+  color: #dddddd;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+.amount-value {
+  color: #ffffff;
+
+  font-size: 16px;
+}
+
+.summary-divider {
+  height: 1px;
+
+  margin: 12px 0;
+
+  background: #222425;
+}
+
+.currency-code {
+  color: #ff6500;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  align-self: flex-end;
+
+  margin-bottom: 2px;
+}
+
+/* =========================
+   PAYMENT METHOD TITLE
+   ========================= */
+
+.method-label {
+  position: absolute;
+
+  top: 309px;
+  left: 60px;
+
+  color: #dddddd;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+/* =========================
+   PAYMENT METHOD CARDS
+   ========================= */
+
+.method-card {
+  position: absolute;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 282px;
+  height: 64px;
+
+  box-sizing: border-box;
+
+  padding: 10px 13px;
+
+  border: 1px solid #202223;
+
+  border-radius: 15px;
+
+  background: #111314;
+
+  display: flex;
+
+  align-items: center;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+/* First Card */
+
+.method-card:nth-of-type(1) {
+  top: 333px;
+}
+
+/* Second Card */
+
+.method-card:nth-of-type(2) {
+  top: 405px;
+}
+
+/* Third Card */
+
+.method-card:nth-of-type(3) {
+  top: 477px;
+}
+
+.method-card:hover {
+  background: #151718;
+
+  border-color: #ff6500;
+
+  transform: translateX(-50%) translateY(-2px);
+
+  box-shadow: 0 5px 16px rgba(255, 101, 0, 0.12);
+}
+
+/* =========================
+   SELECTED METHOD
+   ========================= */
+
+.selected-method {
+  background: #151515;
+
+  border-color: #ff6500;
+
+  box-shadow: 0 0 0 1px rgba(255, 101, 0, 0.35);
+}
+
+/* =========================
+   METHOD ICON
+   ========================= */
+
+.method-icon {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  border-radius: 12px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 17px;
+
+  font-weight: 600;
+
+  background: #191b1c;
+
+  border: 1px solid #303333;
+
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    color 0.2s,
+    box-shadow 0.2s;
+}
+
+.gcash-icon {
+  color: #00b9ff;
+
+  font-size: 16px;
+}
+
+.bank-icon {
+  font-size: 17px;
+}
+
+.card-icon {
+  font-size: 17px;
+}
+
+.selected-method .method-icon {
+  background: linear-gradient(135deg, #ff4500, #ffb900);
+
+  border-color: #ff6500;
+
+  color: #ffffff;
+
+  box-shadow: 0 4px 12px rgba(255, 80, 0, 0.18);
+}
+
+/* =========================
+   METHOD INFORMATION
+   ========================= */
+
+.method-info {
+  flex: 1;
+
+  min-width: 0;
+
+  margin-left: 11px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.method-name {
+  color: #dddddd;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+.method-description {
+  color: #555758;
+
+  font-size: 8px;
+}
+
+.selected-method .method-name {
+  color: #ffffff;
+}
+
+/* =========================
+   RADIO / CHECK
+   ========================= */
+
+.radio {
+  width: 22px;
+  height: 22px;
+
+  flex-shrink: 0;
+
+  border: 1px solid #3a3c3d;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 11px;
+
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.selected-method .radio {
+  background: linear-gradient(135deg, #ff4500, #ffb900);
+
+  border-color: #ff6500;
+
+  box-shadow: 0 0 10px rgba(255, 101, 0, 0.25);
+}
+
+/* =========================
+   CONTINUE BUTTON
+   ========================= */
+
+.continue-button {
+  position: absolute;
+
+  left: 50%;
+  bottom: 34px;
+
+  transform: translateX(-50%);
+
+  width: 282px;
+  height: 50px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background: linear-gradient(90deg, #ff4500, #ffb900);
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  box-shadow: 0 7px 22px rgba(255, 80, 0, 0.18);
+
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.continue-button:hover {
+  transform: translateX(-50%) translateY(-3px);
+
+  box-shadow: 0 10px 28px rgba(255, 80, 0, 0.32);
+}
+
+.continue-button:active {
+  transform: translateX(-50%) scale(0.98);
+}
+
+.continue-arrow {
+  font-size: 16px;
+
+  line-height: 1;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 430px) {
+  .payment-page {
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    border: none;
+
+    border-radius: 0;
+  }
+}

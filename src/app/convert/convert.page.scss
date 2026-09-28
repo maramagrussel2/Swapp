@@ -1,0 +1,687 @@
+ion-content.convert-content {
+  --background: #050607;
+}
+
+.convert-page {
+  position: relative;
+
+  width: 402px;
+  height: 874px;
+
+  margin: 0 auto;
+
+  box-sizing: border-box;
+
+  background: #080a0b;
+  color: #ffffff;
+
+  border: 2px solid #303333;
+  border-radius: 34px;
+
+  overflow: hidden;
+
+  font-family: Arial, sans-serif;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.top-section {
+  position: absolute;
+
+  top: 27px;
+  left: 25px;
+  right: 25px;
+
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  z-index: 20;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.back-button:hover {
+  color: #ff4500;
+}
+
+.back-icon {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.history-button {
+  width: 32px;
+  height: 32px;
+
+  padding: 0;
+
+  border: 1px solid #292d2e;
+  border-radius: 9px;
+
+  background: #111415;
+
+  color: #858a8b;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.history-button:hover {
+  color: #ff4500;
+  border-color: #ff4500;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.title-section {
+  position: absolute;
+
+  top: 78px;
+  left: 25px;
+  right: 25px;
+
+  text-align: center;
+}
+
+.title-section h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 25px;
+  font-weight: 700;
+
+  letter-spacing: -0.5px;
+}
+
+.title-section p {
+  margin: 7px 0 0;
+
+  color: #858a8b;
+
+  font-size: 11px;
+}
+
+/* =========================
+   CURRENCY CARDS
+========================= */
+
+.currency-card {
+  position: absolute;
+
+  left: 25px;
+
+  width: 352px;
+  height: 143px;
+
+  box-sizing: border-box;
+
+  padding: 14px;
+
+  background: #111415;
+
+  border: 1px solid #292d2e;
+
+  border-radius: 14px;
+
+  z-index: 5;
+
+  transition: 0.2s;
+}
+
+.currency-card:hover {
+  border-color: #3c4142;
+}
+
+.from-card {
+  top: 145px;
+}
+
+.to-card {
+  top: 307px;
+}
+
+/* =========================
+   CURRENCY HEADER
+========================= */
+
+.currency-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+.currency-label {
+  color: #858a8b;
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.currency-selector {
+  height: 31px;
+
+  padding: 0 9px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  border: 1px solid #303435;
+  border-radius: 8px;
+
+  background: #191c1d;
+
+  color: #ffffff;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.currency-selector:hover {
+  border-color: #ff4500;
+}
+
+.currency-flag {
+  font-size: 14px;
+}
+
+.arrow {
+  color: #858a8b;
+
+  font-size: 10px;
+}
+
+/* =========================
+   AMOUNT
+========================= */
+
+.amount-row {
+  position: absolute;
+
+  left: 14px;
+  right: 14px;
+  bottom: 15px;
+
+  height: 54px;
+
+  display: flex;
+  align-items: center;
+
+  background: #191c1d;
+
+  border-radius: 11px;
+
+  padding: 0 12px;
+
+  box-sizing: border-box;
+}
+
+.amount-input {
+  min-width: 0;
+
+  flex: 1;
+
+  height: 100%;
+
+  padding: 0;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.amount-input::placeholder {
+  color: #555b5c;
+}
+
+.currency-code {
+  flex-shrink: 0;
+
+  color: #858a8b;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* =========================
+   CURRENCY LIST
+========================= */
+
+.currency-list {
+  position: absolute;
+
+  top: 50px;
+
+  right: 14px;
+
+  width: 175px;
+  max-height: 170px;
+
+  overflow-y: auto;
+
+  padding: 5px;
+
+  box-sizing: border-box;
+
+  background: #171a1b;
+
+  border: 1px solid #303435;
+
+  border-radius: 10px;
+
+  z-index: 100;
+}
+
+.currency-option {
+  width: 100%;
+
+  min-height: 34px;
+
+  padding: 6px 8px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  text-align: left;
+
+  font-size: 10px;
+
+  cursor: pointer;
+}
+
+.currency-option:hover {
+  background: #25292a;
+}
+
+.option-code {
+  font-weight: 700;
+}
+
+.option-name {
+  color: #777c7d;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* =========================
+   SWAP BUTTON
+========================= */
+
+.swap-button {
+  position: absolute;
+
+  top: 276px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 42px;
+  height: 42px;
+
+  padding: 0;
+
+  border: 3px solid #080a0b;
+
+  border-radius: 50%;
+
+  background: #ff4500;
+
+  color: #ffffff;
+
+  font-size: 21px;
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  z-index: 15;
+
+  box-shadow: 0 5px 15px rgba(255, 69, 0, 0.25);
+
+  transition: 0.2s;
+}
+
+.swap-button:hover {
+  background: #ff5010;
+
+  transform: translateX(-50%) scale(1.05);
+}
+
+/* =========================
+   EXCHANGE RATE
+========================= */
+
+.rate-section {
+  position: absolute;
+
+  top: 468px;
+
+  left: 25px;
+  right: 25px;
+
+  height: 55px;
+
+  padding: 10px 13px;
+
+  box-sizing: border-box;
+
+  background: #111415;
+
+  border: 1px solid #292d2e;
+
+  border-radius: 12px;
+}
+
+.rate-label {
+  color: #777c7d;
+
+  font-size: 9px;
+}
+
+.rate-value {
+  margin-top: 5px;
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.rate-update {
+  position: absolute;
+
+  right: 13px;
+  top: 22px;
+
+  color: #777c7d;
+
+  font-size: 8px;
+}
+
+/* =========================
+   CONVERT BUTTON
+========================= */
+
+.convert-button {
+  position: absolute;
+
+  top: 540px;
+
+  left: 25px;
+
+  width: 352px;
+  height: 53px;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 13px;
+
+  background: linear-gradient(135deg, #ff4500, #ffb000);
+
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: 0 7px 20px rgba(255, 69, 0, 0.18);
+
+  transition: 0.2s;
+
+  z-index: 6;
+}
+
+.convert-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 25px rgba(255, 69, 0, 0.3);
+}
+
+.convert-icon {
+  font-size: 18px;
+}
+
+.convert-arrow {
+  position: absolute;
+
+  right: 16px;
+
+  font-size: 18px;
+}
+
+/* =========================
+   BOTTOM NAV
+========================= */
+
+.bottom-nav {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 64px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  background: #0d0f10;
+
+  border-top: 1px solid #252829;
+
+  z-index: 12;
+}
+
+.nav-item {
+  position: relative;
+
+  width: 20%;
+  height: 64px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #777c7d;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 9px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.nav-item ion-icon {
+  font-size: 18px;
+}
+
+.nav-item:hover {
+  color: #ff4500;
+}
+
+.nav-item.active {
+  color: #ff4500;
+}
+
+.nav-item.active::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: 5px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: #ff4500;
+
+  box-shadow: 0 0 7px rgba(255, 69, 0, 0.6);
+}
+
+/* =========================
+   QR SPACE
+========================= */
+
+.qr-space {
+  width: 20%;
+  height: 64px;
+}
+
+/* =========================
+   FLOATING QR
+========================= */
+
+.floating-qr {
+  position: absolute;
+
+  left: 50%;
+  bottom: 35px;
+
+  transform: translateX(-50%);
+
+  width: 58px;
+  height: 58px;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+  border: 4px solid #080a0b;
+
+  border-radius: 50%;
+
+  background: #ff4500;
+
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 24px;
+
+  cursor: pointer;
+
+  z-index: 20;
+
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.45);
+
+  transition: 0.2s;
+}
+
+.floating-qr:hover {
+  background: #ff5010;
+
+  box-shadow: 0 7px 22px rgba(255, 69, 0, 0.35);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 430px) {
+  .convert-page {
+    width: 100%;
+    height: 100%;
+
+    min-height: 0;
+
+    margin: 0;
+
+    border: none;
+    border-radius: 0;
+  }
+}

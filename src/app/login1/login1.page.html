@@ -1,40 +1,139 @@
-<ion-content>
-  <div class="container">
-    <!-- Back pill -->
-    <button class="back-pill" (click)="goBack()">
-      <ion-icon name="arrow-back"></ion-icon>
-    </button>
+<ion-content [fullscreen]="true" class="login-content">
+  <div class="login-page" [class.country-open]="showCountryList">
+    <!-- =========================
+         HEADER
+    ========================== -->
 
-    <!-- Logo + number input -->
-    <div class="top-section">
-      <div class="logo-circle small"><span>S</span></div>
+    <div class="login-header">
+      <button type="button" class="back-button" (click)="goBack()">
+        <span class="back-icon">‹</span>
+        <span>Back</span>
+      </button>
 
-      <div
-        class="phone-pill"
-        [class.shake]="!isValid && mobileNumber.length > 0"
-      >
-        <span class="prefix">+63</span>
+      <div class="security-icon">🔒</div>
+    </div>
+
+    <!-- =========================
+         TITLE
+    ========================== -->
+
+    <div class="title-section">
+      <h1>Welcome Back</h1>
+
+      <p>Enter your mobile number to continue</p>
+    </div>
+
+    <!-- =========================
+         MOBILE NUMBER
+    ========================== -->
+
+    <div class="input-section">
+      <label for="mobileNumber"> Mobile Number </label>
+
+      <!-- INPUT BOX -->
+
+      <div class="input-wrapper">
+        <!-- COUNTRY SELECTOR -->
+
+        <button
+          type="button"
+          class="country-selector"
+          (click)="toggleCountryList()"
+        >
+          <span class="country-flag"> {{ selectedCountry.flag }} </span>
+
+          <span class="country-code"> {{ selectedCountry.code }} </span>
+
+          <span class="dropdown-arrow"> ▾ </span>
+        </button>
+
+        <!-- MOBILE NUMBER -->
+
         <input
+          id="mobileNumber"
+          class="mobile-input"
           type="tel"
-          inputmode="numeric"
-          maxlength="10"
-          placeholder="912 345 6789"
           [(ngModel)]="mobileNumber"
+          maxlength="15"
+          inputmode="numeric"
+          placeholder="Mobile number"
         />
       </div>
 
-      <p class="hint">Enter your mobile number to login</p>
+      <!-- =========================
+           COUNTRY DROPDOWN
+      ========================== -->
+
+      <div class="country-list" *ngIf="showCountryList">
+        <button
+          type="button"
+          class="country-option"
+          *ngFor="let country of countries"
+          (click)="selectCountry(country)"
+        >
+          <span class="option-flag"> {{ country.flag }} </span>
+
+          <span class="option-name"> {{ country.name }} </span>
+
+          <span class="option-code"> {{ country.code }} </span>
+        </button>
+      </div>
+
+      <!-- INPUT HINT -->
+
+      <span class="input-hint">
+        We'll use this number to verify your account
+      </span>
     </div>
 
-    <!-- MPIN Login box (parang GCash) -->
-    <button class="mpin-box" [disabled]="!isValid" (click)="goToMpin()">
-      <div class="mpin-grid">
-        <span></span><span></span><span></span> <span></span><span></span
-        ><span></span> <span></span><span></span><span></span>
+    <!-- =========================
+         CONTINUE CARD
+    ========================== -->
+
+    <button type="button" class="main-square" (click)="goToLogin2()">
+      <!-- KEYPAD ICON -->
+
+      <div class="keypad-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-      <p>MPIN Login</p>
+
+      <!-- TEXT -->
+
+      <div class="continue-text">
+        <span class="continue-title"> Continue </span>
+
+        <span class="continue-subtitle"> Enter your MPIN next </span>
+      </div>
     </button>
 
-    <p class="version">Swapp for a better tomorrow</p>
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <div class="login-footer">
+      <button type="button" class="footer-button">
+        <span class="footer-icon"> ? </span>
+
+        Help Center
+      </button>
+
+      <span class="footer-divider"></span>
+
+      <button type="button" class="footer-button">
+        <span class="footer-icon"> ↗ </span>
+
+        Forgot MPIN
+      </button>
+    </div>
   </div>
 </ion-content>

@@ -1,0 +1,121 @@
+<ion-content class="pay-content">
+  <div class="pay-page">
+    <!-- HEADER -->
+    <div class="top-section">
+      <button type="button" class="back-button" (click)="goBack()">
+        <span>←</span>
+      </button>
+
+      <h1>Pay</h1>
+    </div>
+
+    <!-- QR SCANNER -->
+    <div class="scanner-card">
+      <div class="scanner-frame">
+        <div class="corner top-left"></div>
+        <div class="corner top-right"></div>
+        <div class="corner bottom-left"></div>
+        <div class="corner bottom-right"></div>
+
+        <div class="scanner-placeholder"></div>
+      </div>
+
+      <div class="scanner-line"></div>
+
+      <div class="scanner-text">Scan a QR code to pay</div>
+
+      <button type="button" class="scan-button">
+        <span class="scan-icon">⌾</span>
+        <span>Scan QR</span>
+      </button>
+    </div>
+
+    <!-- QUICK PAY HEADER -->
+    <div class="section-header quick-header">
+      <span>Quick Pay</span>
+
+      <button type="button">See All <span>›</span></button>
+    </div>
+
+    <!-- QUICK PAY -->
+    <div class="quick-pay">
+      <button type="button" class="quick-item">
+        <div class="quick-icon">▣</div>
+        <span>Stores</span>
+      </button>
+
+      <button type="button" class="quick-item">
+        <div class="quick-icon">⚡</div>
+        <span>Bills</span>
+      </button>
+
+      <button type="button" class="quick-item">
+        <div class="quick-icon">▯</div>
+        <span>Mobile</span>
+      </button>
+
+      <button type="button" class="quick-item">
+        <div class="quick-icon">◉</div>
+        <span>Online</span>
+      </button>
+    </div>
+
+    <!-- RECENT PAYMENTS HEADER -->
+    <div class="section-header recent-header">
+      <span>Recent Payments</span>
+
+      <button type="button">See All <span>›</span></button>
+    </div>
+
+    <!-- RECENT PAYMENTS -->
+    <div class="recent-payments">
+      <div class="payment-row">
+        <div class="payment-avatar">M</div>
+
+        <div class="payment-info">
+          <span class="payment-name"> Maria's Store </span>
+
+          <span class="payment-date"> Today </span>
+        </div>
+
+        <span class="payment-amount"> ₱250.00 </span>
+      </div>
+
+      <div class="payment-row">
+        <div class="payment-avatar">G</div>
+
+        <div class="payment-info">
+          <span class="payment-name"> Grocery Store </span>
+
+          <span class="payment-date"> Yesterday </span>
+        </div>
+
+        <span class="payment-amount"> ₱580.00 </span>
+      </div>
+
+      <div class="payment-row">
+        <div class="payment-avatar">C</div>
+
+        <div class="payment-info">
+          <span class="payment-name"> Coffee Shop </span>
+
+          <span class="payment-date"> Sep 15 </span>
+        </div>
+
+        <span class="payment-amount"> ₱150.00 </span>
+      </div>
+
+      <div class="payment-row">
+        <div class="payment-avatar">S</div>
+
+        <div class="payment-info">
+          <span class="payment-name"> Supermarket </span>
+
+          <span class="payment-date"> Sep 14 </span>
+        </div>
+
+        <span class="payment-amount"> ₱920.00 </span>
+      </div>
+    </div>
+  </div>
+</ion-content>

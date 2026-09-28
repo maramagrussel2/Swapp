@@ -1,0 +1,634 @@
+/* =========================
+   PAGE
+========================= */
+
+ion-content {
+  --background: #050607;
+}
+
+.pay-content {
+  --background: #050607;
+}
+
+/* =========================
+   MAIN PHONE FRAME
+========================= */
+
+.pay-page {
+  position: relative;
+
+  width: 402px;
+  height: 874px;
+
+  margin: 0 auto;
+
+  box-sizing: border-box;
+
+  padding: 27px 22px;
+
+  background: #080a0b;
+
+  color: #ffffff;
+
+  border: 2px solid #303333;
+
+  border-radius: 34px;
+
+  overflow: hidden;
+
+  font-family: Arial, sans-serif;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.top-section {
+  position: absolute;
+
+  top: 27px;
+
+  left: 22px;
+
+  right: 22px;
+
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+}
+
+.back-button {
+  width: 36px;
+
+  height: 36px;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #151718;
+
+  color: #ffffff;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.back-button:hover {
+  background: #242627;
+
+  transform: translateX(-2px);
+}
+
+.back-button span {
+  font-size: 21px;
+
+  line-height: 1;
+}
+
+.top-section h1 {
+  margin: 0;
+
+  margin-left: 13px;
+
+  font-size: 20px;
+
+  font-weight: 600;
+}
+
+/* =========================
+   SCANNER CARD
+========================= */
+
+.scanner-card {
+  position: absolute;
+
+  top: 91px;
+
+  left: 60px;
+
+  width: 282px;
+
+  height: 302px;
+
+  box-sizing: border-box;
+
+  border-radius: 22px;
+
+  background: #111314;
+
+  border: 1px solid #252829;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+/* =========================
+   SCANNER FRAME
+========================= */
+
+.scanner-frame {
+  position: relative;
+
+  width: 180px;
+
+  height: 180px;
+
+  margin-top: 23px;
+
+  border-radius: 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+/* =========================
+   QR PLACEHOLDER
+========================= */
+
+.scanner-placeholder {
+  width: 125px;
+
+  height: 125px;
+
+  border: 2px dashed #3a3c3d;
+
+  border-radius: 8px;
+
+  opacity: 0.7;
+}
+
+/* =========================
+   SCANNER CORNERS
+========================= */
+
+.corner {
+  position: absolute;
+
+  width: 28px;
+
+  height: 28px;
+
+  border-color: #ff6500;
+
+  border-style: solid;
+}
+
+/* TOP LEFT */
+
+.corner.top-left {
+  top: 0;
+
+  left: 0;
+
+  border-width: 3px 0 0 3px;
+
+  border-top-left-radius: 8px;
+}
+
+/* TOP RIGHT */
+
+.corner.top-right {
+  top: 0;
+
+  right: 0;
+
+  border-width: 3px 3px 0 0;
+
+  border-top-right-radius: 8px;
+}
+
+/* BOTTOM LEFT */
+
+.corner.bottom-left {
+  bottom: 0;
+
+  left: 0;
+
+  border-width: 0 0 3px 3px;
+
+  border-bottom-left-radius: 8px;
+}
+
+/* BOTTOM RIGHT */
+
+.corner.bottom-right {
+  bottom: 0;
+
+  right: 0;
+
+  border-width: 0 3px 3px 0;
+
+  border-bottom-right-radius: 8px;
+}
+
+/* =========================
+   SCANNER LINE
+========================= */
+
+.scanner-line {
+  position: absolute;
+
+  top: 108px;
+
+  width: 150px;
+
+  height: 2px;
+
+  background: #ff6500;
+
+  opacity: 0.7;
+
+  box-shadow: 0 0 8px rgba(255, 101, 0, 0.4);
+}
+
+/* =========================
+   SCANNER TEXT
+========================= */
+
+.scanner-text {
+  margin-top: 7px;
+
+  font-size: 11px;
+
+  color: #8b8b8b;
+}
+
+/* =========================
+   SCAN BUTTON
+========================= */
+
+.scan-button {
+  margin-top: 12px;
+
+  width: 130px;
+
+  height: 37px;
+
+  border: none;
+
+  border-radius: 11px;
+
+  background: #ff6500;
+
+  color: #ffffff;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.scan-button:hover {
+  background: #ff7a1a;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 5px 15px rgba(255, 101, 0, 0.25);
+}
+
+.scan-button:active {
+  transform: scale(0.97);
+}
+
+.scan-icon {
+  font-size: 17px;
+}
+
+/* =========================
+   SECTION HEADER
+========================= */
+
+.section-header {
+  position: absolute;
+
+  left: 22px;
+
+  right: 22px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.section-header > span {
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+.section-header button {
+  border: none;
+
+  background: transparent;
+
+  color: #ff6500;
+
+  font-size: 10px;
+
+  cursor: pointer;
+}
+
+.section-header button span {
+  font-size: 15px;
+}
+
+/* =========================
+   QUICK PAY HEADER
+========================= */
+
+.quick-header {
+  top: 417px;
+}
+
+/* =========================
+   QUICK PAY
+========================= */
+
+.quick-pay {
+  position: absolute;
+
+  top: 449px;
+
+  left: 22px;
+
+  right: 22px;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 10px;
+}
+
+/* =========================
+   QUICK ITEM
+========================= */
+
+.quick-item {
+  height: 83px;
+
+  padding: 0;
+
+  border-radius: 15px;
+
+  border: 1px solid #202324;
+
+  background: #111314;
+
+  color: #ffffff;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.quick-item:hover {
+  transform: translateY(-4px);
+
+  background: #151515;
+
+  border-color: #ff6500;
+
+  box-shadow:
+    0 0 0 1px #ff6500,
+    0 7px 20px rgba(255, 101, 0, 0.18);
+}
+
+.quick-item:hover .quick-icon {
+  background: #ff6500;
+
+  color: #ffffff;
+
+  transform: scale(1.05);
+
+  box-shadow: 0 0 12px rgba(255, 101, 0, 0.35);
+}
+
+/* =========================
+   QUICK ICON
+========================= */
+
+.quick-icon {
+  width: 32px;
+
+  height: 32px;
+
+  border-radius: 9px;
+
+  background: #242627;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 16px;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.quick-item span {
+  font-size: 9px;
+
+  color: #cfcfcf;
+}
+
+/* =========================
+   RECENT PAYMENTS HEADER
+========================= */
+
+.recent-header {
+  top: 560px;
+}
+
+/* =========================
+   RECENT PAYMENTS
+========================= */
+
+.recent-payments {
+  position: absolute;
+
+  top: 590px;
+
+  left: 22px;
+
+  right: 22px;
+}
+
+/* =========================
+   PAYMENT ROW
+========================= */
+
+.payment-row {
+  height: 60px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  border-bottom: 1px solid #1d1f20;
+}
+
+/* =========================
+   PAYMENT AVATAR
+========================= */
+
+.payment-avatar {
+  width: 38px;
+
+  height: 38px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #202223;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #dddddd;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+/* =========================
+   PAYMENT INFO
+========================= */
+
+.payment-info {
+  flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.payment-name {
+  font-size: 11px;
+
+  font-weight: 600;
+
+  color: #eeeeee;
+}
+
+.payment-date {
+  font-size: 9px;
+
+  color: #777777;
+}
+
+/* =========================
+   PAYMENT AMOUNT
+========================= */
+
+.payment-amount {
+  font-size: 11px;
+
+  font-weight: 600;
+
+  color: #eeeeee;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 430px) {
+  .pay-page {
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 0;
+
+    margin: 0;
+
+    border-radius: 0;
+
+    border: none;
+  }
+}
+
+/* =========================
+   SMALL SCREEN
+========================= */
+
+@media (max-width: 360px) {
+  .scanner-card {
+    left: 35px;
+
+    width: calc(100% - 70px);
+  }
+
+  .quick-pay {
+    gap: 6px;
+  }
+
+  .quick-item {
+    height: 78px;
+  }
+}

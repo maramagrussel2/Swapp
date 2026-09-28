@@ -1,0 +1,582 @@
+ion-content {
+  --background: #050607;
+}
+
+.bank-content {
+  --background: #050607;
+}
+
+/* =========================
+   MAIN PAGE
+   ========================= */
+
+.bank-page {
+  position: relative;
+
+  width: 402px;
+  height: 874px;
+
+  margin: 0 auto;
+
+  box-sizing: border-box;
+
+  background: #080a0b;
+  color: #ffffff;
+
+  border: 2px solid #303333;
+  border-radius: 34px;
+
+  overflow: hidden;
+
+  font-family: Arial, sans-serif;
+}
+
+/* =========================
+   HEADER
+   ========================= */
+
+.top-section {
+  position: absolute;
+
+  top: 27px;
+  left: 22px;
+  right: 22px;
+
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 20;
+}
+
+.top-section h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 21px;
+
+  font-weight: 600;
+
+  letter-spacing: -0.4px;
+}
+
+/* =========================
+   BACK BUTTON
+   ========================= */
+
+.back-button {
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 47px;
+  height: 42px;
+
+  padding: 0;
+
+  border: 1px solid #252829;
+  border-radius: 13px;
+
+  background: #111314;
+
+  color: #dddddd;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    transform 0.2s;
+}
+
+.back-button:hover {
+  background: #191b1c;
+
+  border-color: #ff6500;
+
+  transform: translateX(-2px);
+}
+
+.back-button:active {
+  transform: scale(0.96);
+}
+
+.back-button span {
+  color: #ff6500;
+
+  font-size: 21px;
+
+  line-height: 1;
+}
+
+/* =========================
+   SEARCH
+   ========================= */
+
+.search-box {
+  position: absolute;
+
+  top: 91px;
+  left: 60px;
+
+  width: 282px;
+  height: 48px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #252829;
+  border-radius: 13px;
+
+  background: #111314;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 13px;
+
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.search-box:focus-within {
+  border-color: #ff6500;
+
+  box-shadow: 0 0 0 2px rgba(255, 101, 0, 0.08);
+}
+
+.search-icon {
+  width: 25px;
+
+  color: #ff6500;
+
+  font-size: 20px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.search-box input {
+  flex: 1;
+
+  min-width: 0;
+
+  height: 100%;
+
+  padding: 0 8px;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-size: 10px;
+}
+
+.search-box input::placeholder {
+  color: #555758;
+}
+
+/* =========================
+   SECTION LABEL
+   ========================= */
+
+.section-label {
+  position: absolute;
+
+  left: 60px;
+
+  color: #dddddd;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+.saved-label {
+  top: 153px;
+}
+
+.all-label {
+  top: 257px;
+}
+
+/* =========================
+   SAVED BANK
+   ========================= */
+
+.saved-bank {
+  position: absolute;
+
+  top: 176px;
+  left: 60px;
+
+  width: 282px;
+  height: 65px;
+
+  padding: 0 12px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #252829;
+  border-radius: 14px;
+
+  background: #111314;
+
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.saved-bank:hover {
+  background: #151718;
+
+  border-color: #ff6500;
+
+  transform: translateY(-2px);
+}
+
+.saved-bank.selected-bank {
+  background: #151718;
+
+  border-color: #ff6500;
+
+  box-shadow: 0 0 0 1px rgba(255, 101, 0, 0.25);
+}
+
+/* =========================
+   BANK LIST
+   ========================= */
+
+.bank-list {
+  position: absolute;
+
+  top: 280px;
+  left: 60px;
+
+  width: 282px;
+
+  max-height: 405px;
+
+  overflow-y: auto;
+
+  padding-right: 3px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.bank-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.bank-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.bank-list::-webkit-scrollbar-thumb {
+  background: #333536;
+
+  border-radius: 10px;
+}
+
+/* =========================
+   BANK ITEM
+   ========================= */
+
+.bank-item {
+  position: relative;
+
+  width: 100%;
+  min-height: 58px;
+
+  padding: 7px 11px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #202223;
+  border-radius: 13px;
+
+  background: #111314;
+
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.bank-item:hover {
+  background: #151718;
+
+  border-color: #ff6500;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 5px 16px rgba(255, 101, 0, 0.12);
+}
+
+.bank-item.selected-bank {
+  background: #151718;
+
+  border-color: #ff6500;
+
+  box-shadow: 0 0 0 1px rgba(255, 101, 0, 0.3);
+}
+
+/* =========================
+   BANK LOGO
+   ========================= */
+
+.bank-logo {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  border-radius: 11px;
+
+  background: #191b1c;
+
+  border: 1px solid #303333;
+
+  color: #ff6500;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    color 0.2s;
+}
+
+.bank-item:hover .bank-logo,
+.bank-item.selected-bank .bank-logo,
+.saved-bank:hover .bank-logo,
+.saved-bank.selected-bank .bank-logo {
+  background: linear-gradient(135deg, #ff4500, #ffb900);
+
+  border-color: #ff6500;
+
+  color: #ffffff;
+}
+
+/* =========================
+   BANK INFO
+   ========================= */
+
+.bank-info {
+  flex: 1;
+
+  min-width: 0;
+
+  margin-left: 11px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.bank-name {
+  color: #dddddd;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+.bank-detail {
+  color: #555758;
+
+  font-size: 8px;
+}
+
+.bank-item:hover .bank-name,
+.bank-item.selected-bank .bank-name,
+.saved-bank:hover .bank-name,
+.saved-bank.selected-bank .bank-name {
+  color: #ffffff;
+}
+
+/* =========================
+   BANK ARROW
+   ========================= */
+
+.bank-arrow {
+  color: #555758;
+
+  font-size: 20px;
+
+  line-height: 1;
+
+  transition:
+    color 0.2s,
+    transform 0.2s;
+}
+
+.bank-item:hover .bank-arrow,
+.bank-item.selected-bank .bank-arrow,
+.saved-bank:hover .bank-arrow,
+.saved-bank.selected-bank .bank-arrow {
+  color: #ff6500;
+
+  transform: translateX(2px);
+}
+
+/* =========================
+   SELECT BANK BUTTON
+   ========================= */
+
+.select-bank-button {
+  position: absolute;
+
+  left: 50%;
+  bottom: 34px;
+
+  transform: translateX(-50%);
+
+  width: 282px;
+  height: 50px;
+
+  border: none;
+  border-radius: 14px;
+
+  background: linear-gradient(90deg, #ff4500, #ffb900);
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  box-shadow: 0 7px 22px rgba(255, 80, 0, 0.18);
+
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s,
+    opacity 0.2s;
+}
+
+.select-bank-button:hover:not(:disabled) {
+  transform: translateX(-50%) translateY(-3px);
+
+  box-shadow: 0 10px 28px rgba(255, 80, 0, 0.32);
+}
+
+.select-bank-button:active:not(:disabled) {
+  transform: translateX(-50%) scale(0.98);
+}
+
+.select-bank-button:disabled {
+  background: #242627;
+
+  color: #555758;
+
+  cursor: not-allowed;
+
+  box-shadow: none;
+
+  opacity: 0.8;
+}
+
+.button-arrow {
+  font-size: 17px;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 430px) {
+  .bank-page {
+    width: 100%;
+    height: 100%;
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    border: none;
+
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .search-box,
+  .saved-bank,
+  .bank-list {
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: calc(100% - 50px);
+  }
+
+  .bank-list {
+    transform: translateX(-50%);
+  }
+
+  .select-bank-button {
+    width: calc(100% - 50px);
+  }
+}

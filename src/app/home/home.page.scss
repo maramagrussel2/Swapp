@@ -1,27 +1,731 @@
-#container {
-  text-align: center;
+/* =====================================================
+   PAGE
+===================================================== */
 
+ion-content.home-content {
+  --background: #050607;
+}
+
+.home-content {
+  --background: #050607;
+}
+
+/* =====================================================
+   MAIN PHONE FRAME
+===================================================== */
+
+.home-page {
+  position: relative;
+
+  width: 402px;
+  height: 874px;
+
+  margin: 0 auto;
+
+  box-sizing: border-box;
+
+  background: #080a0b;
+
+  color: #ffffff;
+
+  border: 2px solid #303333;
+  border-radius: 34px;
+
+  overflow: hidden;
+
+  font-family: Arial, sans-serif;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.home-header {
   position: absolute;
+
+  top: 27px;
+  left: 38px;
+  right: 38px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  z-index: 10;
+}
+
+.welcome-section {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.welcome-text {
+  color: #777b7d;
+
+  font-size: 9px;
+}
+
+.welcome-section h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 21px;
+  font-weight: 600;
+
+  letter-spacing: -0.4px;
+}
+
+/* =====================================================
+   NOTIFICATION
+===================================================== */
+
+.notification-button {
+  width: 48px;
+  height: 46px;
+
+  padding: 0;
+
+  border: 1px solid #282b2c;
+  border-radius: 14px;
+
+  background: #111415;
+
+  color: #777b7d;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.notification-button ion-icon {
+  font-size: 21px;
+}
+
+.notification-button:hover {
+  background: #191b1c;
+
+  border-color: #ff6500;
+
+  color: #ff6500;
+
+  transform: translateY(-2px);
+}
+
+.notification-button:active {
+  transform: scale(0.96);
+}
+
+/* =====================================================
+   BALANCE CARD
+===================================================== */
+
+.balance-card {
+  position: absolute;
+
+  top: 110px;
+  left: 38px;
+
+  width: 326px;
+  height: 145px;
+
+  box-sizing: border-box;
+
+  padding: 22px;
+
+  border: 1px solid #292d2e;
+
+  border-radius: 23px;
+
+  background: linear-gradient(145deg, #191c1d 0%, #121516 100%);
+
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.balance-card:hover {
+  border-color: #343839;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.balance-label {
+  color: #777b7d;
+
+  font-size: 9px;
+}
+
+.balance-amount {
+  margin-top: 9px;
+
+  color: #ffffff;
+
+  font-size: 28px;
+
+  font-weight: 600;
+
+  letter-spacing: -0.7px;
+}
+
+.balance-footer {
+  position: absolute;
+
+  left: 22px;
+  right: 22px;
+  bottom: 18px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.balance-footer span {
+  color: #55595b;
+
+  font-size: 8px;
+}
+
+/* =====================================================
+   QUICK ACTIONS
+===================================================== */
+
+.quick-actions {
+  position: absolute;
+
+  top: 278px;
+  left: 38px;
+
+  width: 326px;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 15px;
+}
+
+.action-card {
+  width: 71px;
+  height: 133px;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+  border: 1px solid #292d2e;
+
+  border-radius: 19px;
+
+  background: #111415;
+
+  color: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 11px;
+
+  cursor: pointer;
+
+  font-family: Arial, sans-serif;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.action-icon {
+  width: 44px;
+  height: 44px;
+
+  border-radius: 12px;
+
+  background: #202526;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.action-icon ion-icon {
+  color: #ffffff;
+
+  font-size: 23px;
+
+  transition: color 0.2s ease;
+}
+
+.action-card > span {
+  color: #dddddd;
+
+  font-size: 9px;
+
+  transition: color 0.2s ease;
+}
+
+.action-card:hover {
+  background: #191b1c;
+
+  border-color: #ff6500;
+
+  transform: translateY(-4px);
+
+  box-shadow: 0 9px 20px rgba(0, 0, 0, 0.28);
+}
+
+.action-card:hover .action-icon {
+  background: #292d2e;
+
+  transform: scale(1.04);
+}
+
+.action-card:hover .action-icon ion-icon,
+.action-card:hover > span {
+  color: #ff6500;
+}
+
+.action-card:active {
+  transform: translateY(0) scale(0.97);
+}
+
+/* =====================================================
+   RECENT TRANSACTIONS
+===================================================== */
+
+.transactions-section {
+  position: absolute;
+
+  top: 437px;
+  left: 38px;
+
+  width: 326px;
+}
+
+.transactions-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+.transactions-header h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 17px;
+
+  font-weight: 600;
+
+  letter-spacing: -0.3px;
+}
+
+.see-all-button {
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #ff6500;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.see-all-button:hover {
+  color: #ff914d;
+
+  transform: translateX(2px);
+}
+
+/* =====================================================
+   TRANSACTION CARD
+===================================================== */
+
+.transaction-card {
+  width: 326px;
+  height: 77px;
+
+  margin-bottom: 13px;
+
+  padding: 0 16px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #292d2e;
+
+  border-radius: 17px;
+
+  background: #111415;
+
+  display: flex;
+
+  align-items: center;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.transaction-card:hover {
+  background: #171a1b;
+
+  border-color: #383c3d;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 7px 18px rgba(0, 0, 0, 0.22);
+}
+
+.transaction-avatar {
+  width: 45px;
+  height: 45px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #202627;
+
+  color: #ff6500;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.transaction-card:hover .transaction-avatar {
+  background: #292e2f;
+
+  transform: scale(1.03);
+}
+
+.transaction-details {
+  margin-left: 14px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.transaction-name {
+  color: #eeeeee;
+
+  font-size: 10px;
+}
+
+.transaction-time {
+  color: #666a6b;
+
+  font-size: 8px;
+}
+
+.transaction-amount {
+  margin-left: auto;
+
+  color: #eeeeee;
+
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+/* =====================================================
+   FLOATING QR BUTTON
+===================================================== */
+
+.floating-qr-container {
+  position: absolute;
+
+  left: 50%;
+
+  bottom: 28px;
+
+  transform: translateX(-50%);
+
+  width: 78px;
+  height: 82px;
+
+  z-index: 300;
+}
+
+.qr-button {
+  position: relative;
+
+  width: 78px;
+  height: 82px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  flex-direction: column;
+
+  transition: transform 0.2s ease;
+}
+
+.qr-circle {
+  width: 62px;
+  height: 62px;
+
+  box-sizing: border-box;
+
+  border-radius: 50%;
+
+  background: #ff6500;
+
+  border: 4px solid #080a0b;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    0 0 10px rgba(255, 101, 0, 0.55),
+    0 0 24px rgba(255, 69, 0, 0.32);
+
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.qr-circle ion-icon {
+  color: #ffffff;
+
+  font-size: 30px;
+}
+
+.qr-label {
+  margin-top: 1px;
+
+  color: #ff6500;
+
+  font-size: 9px;
+
+  font-weight: 600;
+}
+
+.qr-button:hover {
+  transform: translateY(-4px);
+}
+
+.qr-button:hover .qr-circle {
+  box-shadow:
+    0 0 15px rgba(255, 101, 0, 0.75),
+    0 0 32px rgba(255, 69, 0, 0.42);
+}
+
+.qr-button:active {
+  transform: translateY(0) scale(0.96);
+}
+
+/* =====================================================
+   BOTTOM NAVIGATION
+===================================================== */
+
+.bottom-navigation {
+  position: absolute;
+
   left: 0;
   right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  bottom: 0;
+
+  height: 87px;
+
+  box-sizing: border-box;
+
+  background: #101314;
+
+  border-top: 1px solid #292d2e;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr
+    1fr
+    1fr
+    1fr;
+
+  align-items: center;
+
+  z-index: 200;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.nav-item {
+  width: 100%;
+  height: 87px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #777b7d;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  cursor: pointer;
+
+  font-family: Arial, sans-serif;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+.nav-item ion-icon {
+  font-size: 23px;
 
-  color: #8c8c8c;
+  color: #777b7d;
 
-  margin: 0;
+  transition: color 0.2s ease;
 }
 
-#container a {
-  text-decoration: none;
+.nav-item span {
+  color: #777b7d;
+
+  font-size: 9px;
+
+  transition: color 0.2s ease;
+}
+
+.nav-item:hover {
+  transform: translateY(-2px);
+}
+
+.nav-item:hover ion-icon,
+.nav-item:hover span {
+  color: #ff6500;
+}
+
+.nav-item.active ion-icon,
+.nav-item.active span {
+  color: #ff6500;
+}
+
+.qr-space {
+  width: 100%;
+  height: 87px;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 430px) {
+  .home-page {
+    width: 100%;
+    height: 100vh;
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    border: none;
+
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .home-header {
+    left: 25px;
+    right: 25px;
+  }
+
+  .balance-card {
+    left: 25px;
+
+    width: calc(100% - 50px);
+  }
+
+  .quick-actions {
+    left: 25px;
+
+    width: calc(100% - 50px);
+
+    gap: 8px;
+  }
+
+  .action-card {
+    width: 100%;
+  }
+
+  .transactions-section {
+    left: 25px;
+
+    width: calc(100% - 50px);
+  }
+
+  .transaction-card {
+    width: 100%;
+  }
 }

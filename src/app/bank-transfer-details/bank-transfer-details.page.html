@@ -1,0 +1,97 @@
+<ion-content class="details-content">
+  <div class="details-page">
+    <!-- HEADER -->
+    <div class="top-section">
+      <button type="button" class="back-button" (click)="goBack()">
+        <span>←</span>
+      </button>
+
+      <h1>Bank Transfer Details</h1>
+    </div>
+
+    <!-- SELECTED BANK -->
+    <div class="bank-section">
+      <div class="section-label">Selected Bank</div>
+
+      <div class="selected-bank-card">
+        <div class="bank-logo">{{ bankInitial }}</div>
+
+        <div class="bank-info">
+          <span class="bank-name"> {{ bankName }} </span>
+
+          <span class="bank-detail"> Bank Account </span>
+        </div>
+
+        <span class="check-icon"> ✓ </span>
+      </div>
+    </div>
+
+    <!-- ACCOUNT DETAILS -->
+    <div class="account-section">
+      <div class="section-label">Account Details</div>
+
+      <!-- ACCOUNT NAME -->
+      <div class="input-group">
+        <label> Account Name </label>
+
+        <input
+          type="text"
+          [(ngModel)]="accountName"
+          placeholder="Enter account name"
+        />
+      </div>
+
+      <!-- ACCOUNT NUMBER -->
+      <div class="input-group">
+        <label> Account Number </label>
+
+        <input
+          type="text"
+          [(ngModel)]="accountNumber"
+          placeholder="Enter account number"
+          inputmode="numeric"
+        />
+      </div>
+    </div>
+
+    <!-- AMOUNT -->
+    <div class="amount-section">
+      <div class="section-label">Transfer Amount</div>
+
+      <div class="amount-card">
+        <span class="currency-symbol"> ₱ </span>
+
+        <input type="number" [(ngModel)]="amount" placeholder="0.00" />
+      </div>
+    </div>
+
+    <!-- SUMMARY -->
+    <div class="summary-card">
+      <div class="summary-row">
+        <span> Transfer Fee </span>
+
+        <span> ₱0.00 </span>
+      </div>
+
+      <div class="summary-divider"></div>
+
+      <div class="summary-row total-row">
+        <span> Total </span>
+
+        <span> ₱{{ amount || '0.00' }} </span>
+      </div>
+    </div>
+
+    <!-- CONTINUE -->
+    <button
+      type="button"
+      class="continue-button"
+      [disabled]="!accountName || !accountNumber || !amount"
+      (click)="continueTransfer()"
+    >
+      <span> Continue </span>
+
+      <span class="continue-arrow"> → </span>
+    </button>
+  </div>
+</ion-content>

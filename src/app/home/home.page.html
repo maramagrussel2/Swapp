@@ -1,20 +1,176 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" class="home-content">
+  <div class="home-page">
+    <!-- ================= HEADER ================= -->
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <div class="home-header">
+      <div class="welcome-section">
+        <span class="welcome-text">Welcome back</span>
+        <h1>My Wallet</h1>
+      </div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+      <button type="button" class="notification-button">
+        <ion-icon name="notifications-outline"></ion-icon>
+      </button>
+    </div>
+
+    <!-- ================= BALANCE ================= -->
+
+    <div class="balance-card">
+      <span class="balance-label">Total Balance</span>
+
+      <div class="balance-amount">₱12,345.67</div>
+
+      <div class="balance-footer">
+        <span>Available Balance</span>
+        <span>PHP</span>
+      </div>
+    </div>
+
+    <!-- ================= QUICK ACTIONS ================= -->
+
+    <div class="quick-actions">
+      <!-- SEND -->
+      <button type="button" class="action-card" (click)="goToSend()">
+        <div class="action-icon">
+          <ion-icon name="send-outline"></ion-icon>
+        </div>
+
+        <span>Send</span>
+      </button>
+
+      <!-- PAY -->
+      <button type="button" class="action-card" (click)="goToPay()">
+        <div class="action-icon">
+          <ion-icon name="arrow-up-outline"></ion-icon>
+        </div>
+
+        <span>Pay</span>
+      </button>
+
+      <!-- TOP UP -->
+      <button type="button" class="action-card" (click)="goToTopUp()">
+        <div class="action-icon">
+          <ion-icon name="add-outline"></ion-icon>
+        </div>
+
+        <span>Top Up</span>
+      </button>
+
+      <!-- HISTORY -->
+      <button type="button" class="action-card" (click)="goToHistory()">
+        <div class="action-icon">
+          <ion-icon name="list-outline"></ion-icon>
+        </div>
+
+        <span>History</span>
+      </button>
+    </div>
+
+    <!-- ================= RECENT TRANSACTIONS ================= -->
+
+    <div class="transactions-section">
+      <div class="transactions-header">
+        <h2>Recent Transactions</h2>
+
+        <!-- SEE ALL -->
+        <button type="button" class="see-all-button" (click)="goToHistory()">
+          See All
+        </button>
+      </div>
+
+      <!-- MARIA SANTOS -->
+
+      <div class="transaction-card">
+        <div class="transaction-avatar">M</div>
+
+        <div class="transaction-details">
+          <span class="transaction-name"> Maria Santos </span>
+
+          <span class="transaction-time"> Today · 10:30 AM </span>
+        </div>
+
+        <span class="transaction-amount"> -₱500.00 </span>
+      </div>
+
+      <!-- STARBUCKS -->
+
+      <div class="transaction-card">
+        <div class="transaction-avatar">S</div>
+
+        <div class="transaction-details">
+          <span class="transaction-name"> Starbucks </span>
+
+          <span class="transaction-time"> Yesterday · 4:20 PM </span>
+        </div>
+
+        <span class="transaction-amount"> -₱185.00 </span>
+      </div>
+
+      <!-- GRAB -->
+
+      <div class="transaction-card">
+        <div class="transaction-avatar">G</div>
+
+        <div class="transaction-details">
+          <span class="transaction-name"> Grab </span>
+
+          <span class="transaction-time"> Yesterday · 1:15 PM </span>
+        </div>
+
+        <span class="transaction-amount"> -₱250.00 </span>
+      </div>
+    </div>
+
+    <!-- ================= FLOATING QR ================= -->
+
+    <div class="floating-qr-container">
+      <button type="button" class="qr-button" (click)="goToQRGenerator()">
+        <div class="qr-circle">
+          <ion-icon name="qr-code-outline"></ion-icon>
+        </div>
+
+        <span class="qr-label"> </span>
+      </button>
+    </div>
+
+    <!-- ================= BOTTOM NAVIGATION ================= -->
+
+    <div class="bottom-navigation">
+      <!-- HOME -->
+
+      <button type="button" class="nav-item active">
+        <ion-icon name="home-outline"></ion-icon>
+
+        <span>Home</span>
+      </button>
+
+      <!-- INBOX -->
+
+      <button type="button" class="nav-item">
+        <ion-icon name="chatbubble-outline"></ion-icon>
+
+        <span>Inbox</span>
+      </button>
+
+      <!-- QR SPACE -->
+
+      <div class="qr-space"></div>
+
+      <!-- CONVERT -->
+
+      <button type="button" class="nav-item" (click)="goToConvert()">
+        <ion-icon name="swap-horizontal-outline"></ion-icon>
+
+        <span>Convert</span>
+      </button>
+
+      <!-- PROFILE -->
+
+      <button type="button" class="nav-item">
+        <ion-icon name="person-outline"></ion-icon>
+
+        <span>Profile</span>
+      </button>
+    </div>
   </div>
 </ion-content>

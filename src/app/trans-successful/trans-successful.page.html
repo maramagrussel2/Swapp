@@ -1,0 +1,64 @@
+<ion-content class="success-content">
+  <div class="success-page">
+    <!-- Success Icon -->
+    <div class="success-icon">✓</div>
+
+    <!-- Title -->
+    <div class="title-section">
+      <h1>Transfer Successful</h1>
+
+      <p>Your money has been sent successfully.</p>
+    </div>
+
+    <!-- Main Transfer Card -->
+    <div class="transfer-card">
+      <span class="amount"> {{ currencySymbol }}{{ amount }} </span>
+
+      <span class="currency"> {{ currencyCode }} </span>
+
+      <div class="card-divider"></div>
+
+      <div class="sent-label">Sent to</div>
+
+      <div class="recipient-name">{{ recipient }}</div>
+
+      <div class="recipient-detail">{{ recipientEmail }}</div>
+    </div>
+
+    <!-- Transaction Details -->
+    <div class="details-label">Transaction Details</div>
+
+    <div class="details-card">
+      <div class="detail-row">
+        <span> Payment Method </span>
+
+        <span class="detail-value"> {{ paymentName }} </span>
+      </div>
+
+      <div class="detail-row">
+        <span> Transfer Fee </span>
+
+        <span class="detail-value"> {{ currencySymbol }}0.00 </span>
+      </div>
+
+      <div class="detail-row">
+        <span> Date </span>
+
+        <span class="detail-value"> {{ transferDate }} </span>
+      </div>
+
+      <div class="detail-row">
+        <span> Reference No. </span>
+
+        <span class="reference-number"> {{ referenceNumber }} </span>
+      </div>
+    </div>
+
+    <!-- Done Button -->
+    <button type="button" class="done-button" (click)="goHome()">
+      <span> Done </span>
+
+      <span class="done-arrow"> → </span>
+    </button>
+  </div>
+</ion-content>

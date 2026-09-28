@@ -1,42 +1,34 @@
-<ion-content>
-  <div class="container">
-    <!-- Logo -->
-    <div class="logo-circle">
-      <span>S</span>
+<ion-content [fullscreen]="true">
+  <div class="onboarding-page">
+    <!-- Swapp Logo -->
+    <img src="assets/swapp-logo.png.png" alt="Swapp Logo" class="swapp-logo" />
+
+    <div class="welcome-text">
+      <h1>Welcome</h1>
+      <p>
+        May pera ka?<br />
+        Tara swap.
+      </p>
     </div>
 
-    <!-- Carousel -->
-    <div class="carousel" (click)="nextSlide()">
-      <div class="track" [style.transform]="translateX">
-        <div class="slide" *ngFor="let s of slides">
-          <h1>{{ s.title }}</h1>
-          <p>{{ s.text }}</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Dots -->
     <div class="dots">
-      <span
-        *ngFor="let s of slides; let i = index"
-        class="dot"
-        [class.active]="i === current"
-        (click)="current = i; $event.stopPropagation()"
-      ></span>
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
     </div>
 
-    <!-- Buttons -->
-    <div class="buttons">
-      <ion-button expand="block" class="btn-primary" routerLink="/login1">
+    <div class="button-container">
+      <ion-button class="get-started" expand="block" (click)="goToSignup()">
         Get Started
       </ion-button>
+
       <ion-button
+        class="login-button"
         expand="block"
-        fill="outline"
-        class="btn-secondary"
-        routerLink="/login1"
+        fill="clear"
+        (click)="goToLogin1()"
       >
-        I already have an account
+        Login
       </ion-button>
     </div>
   </div>

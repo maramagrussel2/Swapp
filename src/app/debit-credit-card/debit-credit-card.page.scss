@@ -1,0 +1,615 @@
+ion-content {
+  --background: #050607;
+}
+
+.card-content {
+  --background: #050607;
+}
+
+.card-page {
+  position: relative;
+  width: 402px;
+  height: 874px;
+  margin: 0 auto;
+
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 100% 100%,
+      rgba(255, 69, 0, 0.08),
+      transparent 32%
+    ),
+    #080a0b;
+
+  color: #ffffff;
+
+  border: 2px solid #303333;
+  border-radius: 34px;
+
+  overflow: hidden;
+
+  font-family: Arial, sans-serif;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.top-section {
+  position: absolute;
+
+  top: 27px;
+  left: 22px;
+  right: 22px;
+
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  z-index: 20;
+}
+
+/* BACK */
+
+.back-button {
+  height: 42px;
+  min-width: 47px;
+
+  padding: 0 14px;
+
+  border: 1px solid #252829;
+  border-radius: 13px;
+
+  background: #111314;
+
+  color: #ff6500;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    transform 0.2s;
+}
+
+.back-button:hover {
+  background: #191b1c;
+  border-color: #ff6500;
+  transform: translateX(-2px);
+}
+
+.back-button:active {
+  transform: scale(0.96);
+}
+
+.back-button > span:first-child {
+  font-size: 21px;
+  line-height: 1;
+}
+
+.back-text {
+  font-size: 10px;
+  color: #dddddd;
+}
+
+/* CANCEL */
+
+.cancel-button {
+  height: 42px;
+
+  padding: 0 15px;
+
+  border: 1px solid #252829;
+  border-radius: 13px;
+
+  background: #111314;
+
+  color: #777777;
+
+  font-size: 10px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s;
+}
+
+.cancel-button:hover {
+  background: #191b1c;
+  color: #ff6500;
+  border-color: #ff6500;
+}
+
+/* =========================================
+   TITLE
+========================================= */
+
+.title-section {
+  position: absolute;
+
+  top: 105px;
+  left: 60px;
+  right: 60px;
+}
+
+.title-section h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 22px;
+  font-weight: 600;
+
+  letter-spacing: -0.4px;
+}
+
+.title-section p {
+  margin: 7px 0 0;
+
+  color: #777777;
+
+  font-size: 9px;
+}
+
+/* =========================================
+   CARD PREVIEW
+========================================= */
+
+.card-preview {
+  position: absolute;
+
+  top: 148px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 282px;
+  height: 145px;
+
+  box-sizing: border-box;
+
+  padding: 18px;
+
+  border-radius: 19px;
+
+  background: linear-gradient(135deg, #242627 0%, #17191a 48%, #0d0f10 100%);
+
+  border: 1px solid rgba(255, 101, 0, 0.35);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.45),
+    0 0 25px rgba(255, 69, 0, 0.05);
+
+  overflow: hidden;
+}
+
+/* subtle orange glow */
+
+.card-preview::after {
+  content: "";
+
+  position: absolute;
+
+  width: 170px;
+  height: 170px;
+
+  right: -80px;
+  top: -90px;
+
+  background: rgba(255, 69, 0, 0.07);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+/* CARD TOP */
+
+.card-top {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-type {
+  color: #ff6500;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+/* CHIP */
+
+.chip {
+  width: 28px;
+  height: 20px;
+
+  border-radius: 5px;
+
+  background: #c4c4c4;
+
+  color: #555555;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 15px;
+
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+}
+
+/* CARD NUMBER */
+
+.card-number-preview {
+  margin-top: 30px;
+
+  color: #eeeeee;
+
+  font-size: 15px;
+
+  letter-spacing: 2px;
+}
+
+/* CARD BOTTOM */
+
+.card-bottom {
+  position: absolute;
+
+  left: 18px;
+  right: 18px;
+  bottom: 16px;
+
+  display: flex;
+
+  justify-content: space-between;
+}
+
+.card-bottom > div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.preview-label {
+  color: #666869;
+
+  font-size: 6px;
+
+  letter-spacing: 0.8px;
+}
+
+.preview-value {
+  color: #dddddd;
+
+  font-size: 8px;
+
+  font-weight: 600;
+}
+
+/* =========================================
+   INPUT FIELDS
+========================================= */
+
+.field-group {
+  position: absolute;
+
+  width: 282px;
+}
+
+.field-group label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #dddddd;
+
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+/* CARD NUMBER */
+
+.card-number-field {
+  top: 315px;
+  left: 60px;
+}
+
+/* INPUT BOX */
+
+.input-box {
+  width: 100%;
+  height: 48px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #252829;
+  border-radius: 13px;
+
+  background: #111314;
+
+  display: flex;
+  align-items: center;
+
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s,
+    background 0.2s;
+}
+
+.input-box:focus-within {
+  border-color: #ff6500;
+
+  background: #131516;
+
+  box-shadow:
+    0 0 0 2px rgba(255, 101, 0, 0.08),
+    0 0 15px rgba(255, 69, 0, 0.05);
+}
+
+.input-box input {
+  width: 100%;
+  height: 100%;
+
+  box-sizing: border-box;
+
+  padding: 0 14px;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 13px;
+}
+
+.input-box input::placeholder {
+  color: #555758;
+}
+
+/* =========================================
+   EXPIRY + CVV
+========================================= */
+
+.two-fields {
+  position: absolute;
+
+  top: 395px;
+  left: 60px;
+
+  width: 282px;
+
+  display: flex;
+
+  gap: 12px;
+}
+
+.two-fields .field-group {
+  position: static;
+
+  width: auto;
+
+  flex: 1;
+}
+
+.two-fields .input-box {
+  height: 48px;
+}
+
+/* =========================================
+   CARDHOLDER
+========================================= */
+
+.cardholder-field {
+  top: 475px;
+  left: 60px;
+}
+
+.cardholder-field .input-box {
+  height: 48px;
+}
+
+/* =========================================
+   SECURITY
+========================================= */
+
+.security-notice {
+  position: absolute;
+
+  top: 550px;
+  left: 60px;
+
+  width: 282px;
+  min-height: 57px;
+
+  box-sizing: border-box;
+
+  padding: 10px 12px;
+
+  border: 1px solid #202223;
+  border-radius: 13px;
+
+  background: #101213;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+/* SECURITY ICON */
+
+.security-icon {
+  width: 32px;
+  height: 32px;
+
+  flex-shrink: 0;
+
+  border-radius: 9px;
+
+  background: #191b1c;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14px;
+}
+
+/* SECURITY TEXT */
+
+.security-text {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.security-title {
+  color: #dddddd;
+
+  font-size: 9px;
+
+  font-weight: 600;
+}
+
+.security-description {
+  color: #555758;
+
+  font-size: 8px;
+}
+
+/* =========================================
+   CONTINUE BUTTON
+========================================= */
+
+.continue-button {
+  position: absolute;
+
+  left: 50%;
+  bottom: 34px;
+
+  transform: translateX(-50%);
+
+  width: 282px;
+  height: 50px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background: linear-gradient(90deg, #ff4500, #ff6500, #ffb900);
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 25px;
+
+  box-shadow: 0 8px 25px rgba(255, 69, 0, 0.2);
+
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s,
+    opacity 0.2s;
+}
+
+.continue-button:hover {
+  transform: translateX(-50%) translateY(-3px);
+
+  box-shadow: 0 12px 30px rgba(255, 69, 0, 0.32);
+}
+
+.continue-button:active {
+  transform: translateX(-50%) scale(0.98);
+}
+
+.continue-arrow {
+  font-size: 20px;
+
+  line-height: 1;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 430px) {
+  .card-page {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+
+    margin: 0;
+
+    border: none;
+    border-radius: 0;
+  }
+}
+
+/* SMALL PHONES */
+
+@media (max-width: 360px) {
+  .title-section {
+    left: 45px;
+  }
+
+  .card-number-field {
+    left: 45px;
+    width: calc(100% - 90px);
+  }
+
+  .two-fields {
+    left: 45px;
+    width: calc(100% - 90px);
+  }
+
+  .cardholder-field {
+    left: 45px;
+    width: calc(100% - 90px);
+  }
+
+  .security-notice {
+    left: 45px;
+    width: calc(100% - 90px);
+  }
+
+  .card-preview {
+    width: calc(100% - 90px);
+  }
+
+  .continue-button {
+    width: calc(100% - 90px);
+  }
+}
